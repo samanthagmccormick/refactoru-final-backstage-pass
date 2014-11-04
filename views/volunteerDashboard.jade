@@ -1,0 +1,50 @@
+//- - Volunteer dashboard
+//-   ~ Links: Profile (Edit/View), Confirmed Events, Pending Events, View All Events (Homepage)
+//-   ~ Volunteer profile (fill out information once and then use for all events)
+//-   ~ Link to homepage to view and search for upcoming events
+//-   ~ Section of upcoming confirmed events
+//-   ~ List of pending applications
+extends layout
+
+block content
+	//- Sidebar/top nav: View Profile, Confirmed Events, Pending Events, Browse Events (Homepage)
+	//- a(href="/volunteerDashboard/#{volunteer.id}") View My Profile
+	a(href="/myEvents") My Confirmed Events
+	a(href="/myPendingEvents") My Pending Events
+	a(href="/") Browse All Events
+
+	h1 Volunteer Dashboard	
+
+	h2 Profile
+	a(href='/edit') Edit Profile
+	img.img-responsive(src="#{volunteer.image}")
+	p #{volunteer.name}
+	p #{volunteer.bio}
+	p #{volunteer.email}
+	p #{volunteer.location}
+	p #{volunteer.mobile}
+	p #{volunteer.confirmedEventIDs}
+
+	h2#confirmedEvents Confirmed Events
+
+	//- a(href="/eventsModal") Confirmed Events
+	//- if the volunteer's ID is within the event's list of volunteerIDs
+	//- for (var i = 0; i < event.volunteerIDs.length; i++) {
+	//- 	if (#{volunteer.id} === #{event.volunteer[i]}) {
+	//- 		p #{event.title} on #{event.date} at #{event.time}
+	//- 	} else {
+	//- 		p You have no upcoming events.
+	//- 	}
+	//- };
+
+	h2#pendingEvents Pending Events
+
+	//- a(href="/pendingEventsModal") Pending Events
+	//- if the volunteer's ID is within the event's list of volunteerIDs
+	//- for (var i = 0; i < event.volunteerIDs.length; i++) {
+	//- 	if (#{volunteer.id} === #{event.volunteer[i]}) {
+	//- 		p #{event.title} on #{event.date} at #{event.time}
+	//- 	} else {
+	//- 		p You have no pending events.
+	//- 	}
+	//- };

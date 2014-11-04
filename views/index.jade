@@ -1,0 +1,29 @@
+extends layout
+
+block content
+	h1 Backstage Pass
+	h2 Upcoming Events
+	ul
+		for event in events
+			ul.no-margin
+				li
+					.col-lg-6.col-md-6.col-sm-6.col-xs-12
+						.img-container.clearfix
+							img(src="http://www.placehold.it/400x300")
+							p.carousel-caption #{event.date} at #{event.time}
+	
+	//- h2 Add an Event
+	//- form(action='/addEvent' method ='post')
+	//- 	input(type="text" name='title' placeholder='Event title')
+	//- 	input(type="text" name='date' placeholder='Date')
+	//- 	input(type="text" name='time' placeholder='Time')
+	//- 	input(type="text" name='url' placeholder='Link to the event website')
+	//- 	input(type="text" name='volunteerQuota' placeholder='Number of volunteers you need')
+	//- 	input(type="text" name='volunteerTime' placeholder='Timeslot you need volunteers to be available')
+	//- 	input(type="submit")
+
+	//- h2 Event Preview
+	//- ul
+	//- 	for e in events
+	//- 		li
+	//- 			h4 e.title

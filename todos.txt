@@ -1,0 +1,72 @@
+
+Eventbrite is an app to sell tickets, and check in guests at the door.
+THIS will be an app to manage event volunteers.
+
+The problem: Events like TEDxBoulder, festivals like the Great American Beer Fest Leftapalooza, and Nedfest, rely on volunteers to set up and power the event. To volunteer for an event like this, there wasn’t an automated process, it was just apply on an online form, then receive an email if you were accepted, then another email about a pre-event meeting, then you showed up at the event and wrote down that you attended, then you got your free tshirt and free admission. On the part of the volunteer, this is a pretty smooth process, but on the part of the event host, they needed to repeat this process for however many volunteers they ended up 'hiring'.
+
+This app solves problems for 2 parties:
+
+   * event managers: Automate this volunteer selection/coordination process, to make it easier to to find and ‘hire’ volunteers. Retain past volunteers’ information in order to contact them for the next year’s event.
+
+   * volunteers: Be first to hear about cool events that are looking for volunteers! Earn karma whenever you volunteer at the event (by checking in on their app or on your phone)
+
+Features
+
+to do today:
+- Homepage, view seed events
+  ~ Backstage Pass: 'get in'
+- Volunteer dashboard
+  ~ Links: Profile (Edit/View), Confirmed Events, Pending Events, View All Events (Homepage)
+  ~ Volunteer profile (fill out information once and then use for all events)
+  ~ Link to homepage to view and search for upcoming events
+  ~ Section of upcoming confirmed events
+  ~ List of pending applications
+
+
+   * Homepage: Display upcoming events, and login buttons in upper right corner
+      ~ Event seeds are done, displaying on the page.
+      ~ Design: TBD
+   * Event Manager Log-in: FB/Twitter, and email
+   * Event Manager Dashboard (use Bootstrap)
+      * Create Your Event ~ You’re creating a landing page for your event
+      * Info needed:
+         * Event webpage
+         * Date
+         * Time
+         * Number of volunteers needed
+         * Volunteer details (time to show up, time to commit, requirements)
+         * Volunteer Perks: free admission, free tshirt, etc.
+         * Custom Application ~ not a top priority
+      * New volunteer applications (immediately appears when you get a new submission)
+      * Volunteer Roster (list of your accepted volunteer names, photos, contact info, etc.)
+
+   * Volunteer Log-in: FB/Twitter, and cell phone OR email
+   * Volunteer Dashboard (use Bootstrap)
+      * Pending applications
+      * Accepted applications / upcoming events
+      * 1 day before the day of the event, the volunteer will receive a text reminder of the event, the time to show up, and any last-minute details
+   * Volunteer Application (a simple form)
+      * fields can be saved and re-used for other event applications?
+      * Application data gets saved in a database and can be seen by the event manager
+
+   * Event Landing Page
+      * Large picture
+      * Social media buttons
+  
+  * ..... Lower Priority Features ..... *
+
+   * Volunteer Verification ~ not top priority
+      * When the volunteer gets to the event, they can check in on their phone to earn points
+   * Calendar integration (export this event / volunteer details to your calendar)
+   * Social media feed on the homepage
+ 
+
+Technologies
+
+   * Bootstrap
+   * Node, Express, with MVC
+   * Object orientation - Your application must keep the model (data) separate from the view (display). Data should be encapsulated in classes (defined by constructors) and rendering should happen in a separate step. Follow the example set by Inspirational Quotes or Restaurant UI. If you use a client-side MVC library it may provide its own method of object instantiation.
+   * MongoDB/Mongoose - to store data
+      * Mongoose schemas for volunteers, event managers, and events
+   * Heroku - an actual server
+   * AJAX - to make small, quick, partial requests to the database, and display quickly to the client, without refreshing the entire page

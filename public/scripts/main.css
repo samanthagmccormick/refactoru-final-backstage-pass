@@ -1,0 +1,17 @@
+.img-container {
+	position: fixed;
+}
+
+.img-container img {
+	position: absolute;
+}
+
+.img-container p {
+	position: absolute;
+	display: inline;
+}
+
+.no-margin {
+	margin:0;
+	padding:0;
+}

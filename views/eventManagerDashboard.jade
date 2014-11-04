@@ -1,0 +1,33 @@
+//-    //- * Event Manager Dashboard (use Bootstrap)
+//-    //-    * Create Your Event ~ You’re creating a landing page for your event
+//-    //-    * Info needed:
+//-    //-       * Event webpage
+//-    //-       * Date
+//-    //-       * Time
+//-    //-       * Number of volunteers needed
+//-    //-       * Volunteer details (time to show up, time to commit, requirements)
+//-    //-       * Volunteer Perks: free admission, free tshirt, etc.
+//-    //-       * Custom Application ~ not a top priority
+//-    //-    * New volunteer applications (immediately appears when you get a new submission)
+//-    //-    * Volunteer Roster (list of your accepted volunteer names, photos, contact info, etc.)
+
+
+//- 	//- Sidebar/top nav: View Profile, Confirmed Events, Pending Events, Browse Events (Homepage)
+
+//- 	//- h2 My Upcoming Events
+//- 	//- button(href='/addEvent') Add New Event
+//- 	//- ul
+//- 	//- 	//- Go through all of this eventManager's events
+//- 	//- 	for event in events
+//- 	//- 		ul
+//- 	//- 			li
+//- 	//- 				img(src="http://www.placehold.it/150x150")
+//- 	//- 				h2 #{event.title}
+//- 	//- 				p #{event.date} at #{event.time}
+//- 	//- 				p Volunteer Quota: #{event.volunteerQuota}
+//- 	//- 				h3 Confirmed Volunteers
+//- 	//- 				//- List all of this event's volunteers beneath
+extends layout2
+
+block content
+	h1 Event Manager Dashboard
