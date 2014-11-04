@@ -1,14 +1,14 @@
+Backstage Pass
 
-Eventbrite is an app to sell tickets, and check in guests at the door.
-THIS will be an app to manage event volunteers.
+Events like TEDxBoulder, the Great American Beer Festival Leftapalooza, and the Aspen Food & Wine Festival rely on volunteers to set up and run the event. 
 
-The problem: Events like TEDxBoulder, festivals like the Great American Beer Fest Leftapalooza, and Nedfest, rely on volunteers to set up and power the event. To volunteer for an event like this, there wasn’t an automated process, it was just apply on an online form, then receive an email if you were accepted, then another email about a pre-event meeting, then you showed up at the event and wrote down that you attended, then you got your free tshirt and free admission. On the part of the volunteer, this is a pretty smooth process, but on the part of the event host, they needed to repeat this process for however many volunteers they ended up 'hiring'.
+I have volunteered for a few of these events, and I found the volunteer application process to be varied across events and in some cases not so smooth. I found out that one of the events I volunteered for had about 50 volunteers, all managed by one guy, who sent out individual emails to individual volunteers thanking for their help and giving out the details about the event..... imagine doing that for 50 different people! 
 
-This app solves problems for 2 parties:
+I want this app to solve problems for two different audiences:
 
-   * event managers: Automate this volunteer selection/coordination process, to make it easier to to find and ‘hire’ volunteers. Retain past volunteers’ information in order to contact them for the next year’s event.
+   * event managers: Automate this volunteer selection/coordination process, to make it easier to to find and ‘hire’ volunteers. Also retain past volunteers’ information in order to contact them for other events.
 
-   * volunteers: Be first to hear about cool events that are looking for volunteers! Earn karma whenever you volunteer at the event (by checking in on their app or on your phone)
+   * volunteers: Be first to hear about fun events that are looking for volunteers. Earn karma whenever you volunteer at the event (by checking in on the app or on your phone)
 
 Features
 
