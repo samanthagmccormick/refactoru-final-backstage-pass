@@ -20,8 +20,10 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/', indexController.index);
-app.get('/:id', indexController.volunteerDashboard);
-app.get('/e/:id', indexController.eventManagerDashboard);
+app.get('/v/:id', indexController.volunteerDash);
+app.get('/e/:id', indexController.eventManagerDash);
+
+app.post('/addVolunteer', indexController.addVolunteer);
 
 app.get('/getEvents/:id', indexController.getEvents);
 

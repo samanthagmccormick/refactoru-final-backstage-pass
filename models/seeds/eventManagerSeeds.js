@@ -16,5 +16,5 @@ EventManager.find({}, function(err, results) {
 		});
 
 		fakeEM1.save();
-	}; // end if statement
+	} // end if statement
 }); // stop finding

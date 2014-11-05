@@ -3,15 +3,48 @@ extends layout
 block content
 	h1 Backstage Pass
 	h2 Upcoming Events
-	ul
-		for event in events
-			ul.no-margin
-				li
-					.col-lg-6.col-md-6.col-sm-6.col-xs-12
-						.img-container.clearfix
-							img(src="http://www.placehold.it/400x300")
-							p.carousel-caption #{event.date} at #{event.time}
+
+	for e in events
+		.col-lg-4.col-md-4.col-sm-4.col-xs-12.no-padding
+			img.img-responsive.floatleft.no-padding(src='http://www.placehold.it/380x300')
+			//- div(style='background-image: url(http://www.placehold.it/400x300);')
+			p.carousel-caption #{e.date} at #{e.time}
 	
+
+	h2 Sign Up
+	.col-lg-4.col-md-4.col-sm-4.col-xs.4
+		form.form-horizontal(action='/addVolunteer' method='post')
+			.form-group
+				label.control-label
+					| Name:
+				input.form-control(type="text" name='name' placeholder='Name')
+			.form-group
+				label.control-label
+					| Email Address:
+				input.form-control(type="text" name='email' placeholder='Email')
+			.form-group
+				label.control-label
+					| Cell Number:
+				input.form-control(type="text" name='mobile' placeholder='xxx-xxx-xxxx')
+			.form-group
+				label.control-label
+					| Your location:
+				input.form-control(type="text" name='location' placeholder='Where do you live?')
+			.form-group
+				label.control-label
+					| Tell us a little about yourself!
+				textarea.form-control(type="text" name='bio' placeholder='A little about yourself...')
+			input(type="submit")
+
+	h3 Volunteers
+		//- ul
+		//- 	for volunteer in volunteers
+		//- 		li
+		//- 			h4 #{volunteer.name}
+
+
+
+
 	//- h2 Add an Event
 	//- form(action='/addEvent' method ='post')
 	//- 	input(type="text" name='title' placeholder='Event title')

@@ -12,7 +12,12 @@ var indexController = {
 			});
 		});
 	},
-	volunteerDashboard: function(req, res) {
+	addVolunteer: function(req, res) {
+		var data = req.body;
+		Volunteer.push(data);
+		res.redirect('/');
+	},
+	volunteerDash: function(req, res) {
 		// Pull the ID property out of the URL
 		var id = req.params.id;
 		console.log('Volunteer ID: ', id);
@@ -21,13 +26,14 @@ var indexController = {
 		Volunteer.findOne({id: id}, function(err, result) {
 			// read User Authentication doc
 			console.log('Volunteer found: ', result);
+			// res.send(result);
 			res.render('volunteerDashboard', {
 				volunteer: result
 			});
 		});
 
 	},
-	eventManagerDashboard: function(req, res) {
+	eventManagerDash: function(req, res) {
 		// Pull the ID property out of the URL
 		var id = req.params.id;
 

@@ -13,7 +13,7 @@ var Volunteer = require('../volunteer.js');
 Volunteer.find({}, function(err, results) {
 	if (results.length === 0) {
 		var fake1 = new Volunteer({
-			id: 001,
+			id: 1,
 			name: 'Samantha McCormick',
 			image: 'http://placehold.it/200x200',
 			email: 'sam@gmail.com',
@@ -27,7 +27,7 @@ Volunteer.find({}, function(err, results) {
 		fake1.save();
 
 		var fake2 = new Volunteer({
-			id: 002,
+			id: 2,
 			name: 'Jenn Berry',
 			image: 'http://placehold.it/200x200',
 			email: 'jenn@gmail.com',
@@ -41,7 +41,7 @@ Volunteer.find({}, function(err, results) {
 		fake2.save();
 
 		var fake3 = new Volunteer({
-			id: 003,
+			id: 3,
 			name: 'Chris Malvey',
 			image: 'http://placehold.it/200x200',
 			email: 'chris@gmail.com',
@@ -55,7 +55,7 @@ Volunteer.find({}, function(err, results) {
 		fake3.save();
 
 		var fake4 = new Volunteer({
-			id: 004,
+			id: 4,
 			name: 'Mattie Schuler',
 			image: 'http://placehold.it/200x200',
 			email: 'mattie@gmail.com',
@@ -68,7 +68,7 @@ Volunteer.find({}, function(err, results) {
 
 		fake4.save();
 
-	}; // end if statement
+	} // end if statement
 
 
 }); // stop finding

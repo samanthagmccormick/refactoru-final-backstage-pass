@@ -31,7 +31,7 @@ Event.find({}, function(err, results) {
 			volunteerQuota: 50,
 			volunteerTime: '3:00',
 			volunteerpm: true,
-			volunteerIDs: [001, 002, 003],
+			volunteerIDs: [1, 2, 3],
 			volunteerPerks: 'Free admission, tshirt, water bottle, and stickers. If you\'re 21+, you\'re also invited to the after-party!',
 			owner: 101
 		});
@@ -50,7 +50,7 @@ Event.find({}, function(err, results) {
 			volunteerQuota: 80,
 			volunteerTime: '12:00',
 			volunteerpm: true,
-			volunteerIDs: [002, 003, 004],
+			volunteerIDs: [2, 3, 4],
 			volunteerPerks: 'Free admission all weekend, free entry fee for 1 game/activity (please sign up online ahead of time), and 2 free drink tickets for the Beer Tent.',
 			owner: 101
 		});
@@ -69,14 +69,14 @@ Event.find({}, function(err, results) {
 			volunteerQuota: 30,
 			volunteerTime: '4:00',
 			volunteerpm: true,
-			volunteerIDs: [001, 002, 004],
+			volunteerIDs: [1, 2, 4],
 			volunteerPerks: 'Free admission, 1 free drink ticket for the bar, 1 free entry in a giveaway, and all the free stickers you could ever want....',
 			owner: 101
 		});
 
 		igniteboulder.save();
 
-	}; // end if statement
+	} // end if statement
 
 
 }); // stop finding

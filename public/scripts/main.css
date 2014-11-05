@@ -1,5 +1,7 @@
 .img-container {
 	position: fixed;
+	height: 300px;
+	width: 380px;
 }
 
 .img-container img {
@@ -11,7 +13,12 @@
 	display: inline;
 }
 
-.no-margin {
+.no-padding {
 	margin:0;
-	padding:0;
+	padding-left:0 !important;
+	padding-right:0 !important;
+}
+
+.floatleft {
+	float:left;
 }
