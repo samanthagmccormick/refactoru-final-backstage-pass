@@ -25,17 +25,15 @@ block content
 	p #{volunteer.mobile}
 	p #{volunteer.confirmedEventIDs}
 
-	h2#confirmedEvents Confirmed Events
-
-	//- a(href="/eventsModal") Confirmed Events
+	//- h2#confirmedEvents Confirmed Events
+	a(href="/getEvents/#{volunteer.id}") Confirmed Events
 	//- if the volunteer's ID is within the event's list of volunteerIDs
-	//- for (var i = 0; i < event.volunteerIDs.length; i++) {
-	//- 	if (#{volunteer.id} === #{event.volunteer[i]}) {
-	//- 		p #{event.title} on #{event.date} at #{event.time}
-	//- 	} else {
-	//- 		p You have no upcoming events.
-	//- 	}
-	//- };
+		//- (var i = 0; i < event.volunteerIDs.length; i++) {
+		//- if (#{volunteer.id} === #{event.volunteer[i]}) {
+		//- 	p #{event.title} on #{event.date} at #{event.time}
+		//- } else {
+		//- 	p You have no upcoming events.
+		//- }
 
 	h2#pendingEvents Pending Events
 

@@ -6,10 +6,11 @@ $(document).ready(function() {
 
 	console.log('hello!');
 
-	$.get('/volunteerDashboard/:id', {}, function(responseData) {
+	// $.get('/myEvents', {}, function(responseData) {
 
-		console.log('responseData: ', responseData);
+	// 	console.log('getting');
+	// 	console.log('getEvents response: ', responseData);
 
-	});
+	// });
 
 }); // end jQuery ready

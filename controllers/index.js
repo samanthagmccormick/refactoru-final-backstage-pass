@@ -47,6 +47,14 @@ var indexController = {
 		// 	})
 		// });
 	},
+	getEvents: function(req, res) {
+		var id = req.params.id; 
+
+		// find ALL events belonging to this eventManager, then render
+		Event.find({owner: id}, function(err, results) {
+			res.send(results);
+		});
+	},
 	addEvent: function(req, res) {
 
 	}

@@ -1,6 +1,6 @@
 Backstage Pass
 
-Events like TEDxBoulder, the Great American Beer Festival Leftapalooza, and the Aspen Food & Wine Festival rely on volunteers to set up and run the event. 
+Events like TEDxBoulder, the Great American Beer Festival, Leftapalooza, and the Aspen Food & Wine Festival rely on volunteers to set up and run the event. 
 
 I have volunteered for a few of these events, and I found the volunteer application process to be varied across events and in some cases not so smooth. I found out that one of the events I volunteered for had about 50 volunteers, all managed by one guy, who sent out individual emails to individual volunteers thanking for their help and giving out the details about the event..... imagine doing that for 50 different people! 
 

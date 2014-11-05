@@ -23,6 +23,8 @@ app.get('/', indexController.index);
 app.get('/:id', indexController.volunteerDashboard);
 app.get('/e/:id', indexController.eventManagerDashboard);
 
+app.get('/getEvents/:id', indexController.getEvents);
+
 var server = app.listen(9145, function() {
 	console.log('Express server listening on port ' + server.address().port);
 });
