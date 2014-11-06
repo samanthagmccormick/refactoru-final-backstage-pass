@@ -12,7 +12,8 @@ EventManager.find({}, function(err, results) {
 		var fakeEM1 = new EventManager({
 			id: 101,
 			name: 'James McDonald',
-			email: 'james@gmail.com'
+			email: 'james@gmail.com',
+			events: [11, 12, 13]
 		});
 
 		fakeEM1.save();

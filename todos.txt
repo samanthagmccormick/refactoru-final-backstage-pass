@@ -13,23 +13,23 @@ I want this app to solve problems for two different audiences:
 Features
 
 to do today:
-- Homepage, view seed events
+X Homepage, view seed events
   ~ Backstage Pass: 'get in'
-- Volunteer dashboard
+X Volunteer dashboard
   ~ Links: Profile (Edit/View), Confirmed Events, Pending Events, View All Events (Homepage)
-  ~ Volunteer profile (fill out information once and then use for all events)
-  ~ Link to homepage to view and search for upcoming events
+  X Volunteer profile (fill out information once and then use for all events)
+  X Link to homepage to view and search for upcoming events
   ~ Section of upcoming confirmed events
   ~ List of pending applications
 
 
    * Homepage: Display upcoming events, and login buttons in upper right corner
-      ~ Event seeds are done, displaying on the page.
+      X Event seeds are done, displaying on the page.
       ~ Design: TBD
    * Event Manager Log-in: FB/Twitter, and email
    * Event Manager Dashboard (use Bootstrap)
-      * Create Your Event ~ You’re creating a landing page for your event
-      * Info needed:
+      X Create Your Event ~ You’re creating a landing page for your event
+      X Info needed:
          * Event webpage
          * Date
          * Time
@@ -41,11 +41,11 @@ to do today:
       * Volunteer Roster (list of your accepted volunteer names, photos, contact info, etc.)
 
    * Volunteer Log-in: FB/Twitter, and cell phone OR email
-   * Volunteer Dashboard (use Bootstrap)
+   X Volunteer Dashboard (use Bootstrap)
       * Pending applications
       * Accepted applications / upcoming events
       * 1 day before the day of the event, the volunteer will receive a text reminder of the event, the time to show up, and any last-minute details
-   * Volunteer Application (a simple form)
+   X Volunteer Application (a simple form)
       * fields can be saved and re-used for other event applications?
       * Application data gets saved in a database and can be seen by the event manager
 

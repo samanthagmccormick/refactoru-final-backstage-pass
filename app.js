@@ -25,9 +25,7 @@ app.get('/e/:id', indexController.eventManagerDash);
 
 app.post('/addVolunteer', indexController.addVolunteer);
 app.post('/addEventManager', indexController.addEventManager);
-app.post('/addEvent', indexController.addEvent);
-
-app.get('/getEvents/:id', indexController.getEvents);
+app.post('/addNewEvent', indexController.addNewEvent);
 
 var server = app.listen(9145, function() {
 	console.log('Express server listening on port ' + server.address().port);

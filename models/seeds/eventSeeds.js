@@ -20,9 +20,11 @@ var Event = require('../event.js');
 Event.find({}, function(err, results) {
 	if (results.length === 0) {
 		var tedxboulder = new Event({
+			id: 11,
 			title: 'TEDxBoulder',
 			date: 'December 21, 2014',
-			time: '5:30 - 10:00',
+			startTime: '5:30',
+			endTime: '10:00',
 			pm: true,
 			location: 'Macky Auditorium',
 			locationAddress: '285 University Ave, Boulder, CO 80309',
@@ -39,9 +41,11 @@ Event.find({}, function(err, results) {
 		tedxboulder.save();
 
 		var frozendeadguydays = new Event({
+			id: 12,
 			title: 'Frozen Dead Guy Days',
 			date: 'March 13, 2014',
-			time: '5:00 - 10:00',
+			startTime: '10:30',
+			endTime: '8:00',
 			pm: true,
 			location: 'Downtown Nederland',
 			locationAddress: '1 Main Street, Nederland, CO, 80466',
@@ -58,9 +62,11 @@ Event.find({}, function(err, results) {
 		frozendeadguydays.save();
 
 		var igniteboulder = new Event({
+			id: 13,
 			title: 'Ignite Boulder',
 			date: 'December 11, 2014',
-			time: '7:00 - 11:00',
+			startTime: '5:30',
+			endTime: '10:30',
 			pm: true,
 			location: 'The Boulder Theater',
 			locationAddress: '2032 14th St, Boulder, CO 80302',

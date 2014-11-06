@@ -56,35 +56,36 @@ var indexController = {
 					eventManager: result
 				});
 			});
-
 		});	
 	},
-	addEvent: function(req, res) {
-	// Add a new event, and immediately show that new event within the dashboard.
+	addNewEvent: function(req, res) {
+	// Add a new event and immediately get routed to that event page.
 
 		var data = req.body;
 		var title = req.body.title;
 
-		console.log(title);
+		console.log('Event Title: ', title);
 
-		// // Use the submitted data to create a new applicant instance
-		// var ev = new Event(data);
+		// Use the submitted data to create a new event instance
+		var ev = new Event(data);
 
-		// // Save and THEN redirect
-		// ev.save(function(err, result) {
-		// 	// find the event manager that just signed up, based on email
-		// 	Event.findOne({title: title}, function(err, result) {
-		// 		// read User Authentication doc
-		// 		console.log('Event found: ', result);
+		// Save and THEN redirect
+		ev.save(function(err, result) {
 
-		// 		res.render('eventManagerDashboard', {
-		// 			e: result
-		// 		});
-		// 	});
+			// Find the event that you just added to the database
+			Event.findOne({title: title}, function(err, result) {
+				console.log('Event found: ', result);
 
-		// });	
+				// Render the new event page
+				res.render('event', {
+					e: result
+				});
+			});
+		});
 	},
 	volunteerDash: function(req, res) {
+	// Route for visiting your volunteer dashboard
+
 		// Pull the ID property out of the URL
 		var id = req.params.id;
 		console.log('Volunteer ID: ', id);
@@ -100,6 +101,8 @@ var indexController = {
 		});
 	},
 	eventManagerDash: function(req, res) {
+	// Route for visiting your event manager dashboard
+
 		// Pull the ID property out of the URL
 		var id = req.params.id;
 
@@ -111,17 +114,6 @@ var indexController = {
 				eventManager: result
 			});
 		});
-	},
-	getEvents: function(req, res) {
-		var id = req.params.id; 
-
-		// find ALL events belonging to this eventManager, then render
-		Event.find({owner: id}, function(err, results) {
-			res.send(results);
-		});
-	},
-	addEvent: function(req, res) {
-
 	}
 };
 

@@ -10,7 +10,8 @@ block content
 		.col-lg-4.col-md-4.col-sm-4.col-xs-12.no-padding
 			img.img-responsive.floatleft.no-padding(src='http://www.placehold.it/380x300')
 			//- div(style='background-image: url(http://www.placehold.it/400x300);')
-			p.carousel-caption #{e.date} at #{e.time}
+			p.carousel-caption #{e.title}
+				| #{e.date} from #{e.startTime} to #{e.endTime}
 
 	#volunteerModal.modal.fade
 		.modal-dialog
@@ -28,7 +29,7 @@ block content
 						.form-group
 							label.control-label
 								| Email Address:
-							input.form-control(type="text" name='email' placeholder='Email')
+							input.form-control(type="email" name='email' placeholder='Email')
 						.form-group
 							label.control-label
 								| Cell Number:
@@ -59,5 +60,5 @@ block content
 						.form-group
 							label.control-label
 								| Email Address:
-							input.form-control(type="text" name='email' placeholder='Email')
+							input.form-control(type="email" name='email' placeholder='Email')
 						input.btn.btn-medium.btn-success(type="submit")

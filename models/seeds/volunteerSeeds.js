@@ -20,8 +20,8 @@ Volunteer.find({}, function(err, results) {
 			mobile: '617-314-3773',
 			bio: 'Freelance unicorn curator',
 			location: 'Boulder, Colorado',
-			confirmedEventIDs: [101, 102],
-			pendingEventIDs: [103]
+			confirmedEventIDs: [11, 12],
+			pendingEventIDs: [13]
 		});
 	
 		fake1.save();
@@ -34,8 +34,8 @@ Volunteer.find({}, function(err, results) {
 			mobile: '781-555-6767',
 			bio: 'Seahorse harness manufacturer',
 			location: 'Chicopee, Massachusetts',
-			confirmedEventIDs: [102, 103],
-			pendingEventIDs: [101]
+			confirmedEventIDs: [12, 13],
+			pendingEventIDs: [11]
 		});
 
 		fake2.save();
@@ -48,8 +48,8 @@ Volunteer.find({}, function(err, results) {
 			mobile: '339-444-8888',
 			bio: 'Devilishly good-looking mustard distributor',
 			location: 'Gunbarrel, Colorado',
-			confirmedEventIDs: [101, 103],
-			pendingEventIDs: [102]
+			confirmedEventIDs: [11, 13],
+			pendingEventIDs: [12]
 		});
 
 		fake3.save();
@@ -62,8 +62,8 @@ Volunteer.find({}, function(err, results) {
 			mobile: '303-222-3999',
 			bio: 'Shark tank mechanic',
 			location: 'Boulder, Colorado',
-			confirmedEventIDs: [101, 102],
-			pendingEventIDs: [103]
+			confirmedEventIDs: [11, 12],
+			pendingEventIDs: [13]
 		});
 
 		fake4.save();
