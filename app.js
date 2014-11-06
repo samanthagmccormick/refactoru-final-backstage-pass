@@ -24,6 +24,8 @@ app.get('/v/:id', indexController.volunteerDash);
 app.get('/e/:id', indexController.eventManagerDash);
 
 app.post('/addVolunteer', indexController.addVolunteer);
+app.post('/addEventManager', indexController.addEventManager);
+app.post('/addEvent', indexController.addEvent);
 
 app.get('/getEvents/:id', indexController.getEvents);
 

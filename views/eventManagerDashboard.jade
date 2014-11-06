@@ -14,22 +14,67 @@
 
 //- 	//- Sidebar/top nav: View Profile, Confirmed Events, Pending Events, Browse Events (Homepage)
 
-//- 	//- h2 My Upcoming Events
-//- 	//- button(href='/addEvent') Add New Event
-//- 	//- ul
-//- 	//- 	//- Go through all of this eventManager's events
-//- 	//- 	for event in events
-//- 	//- 		ul
-//- 	//- 			li
-//- 	//- 				img(src="http://www.placehold.it/150x150")
-//- 	//- 				h2 #{event.title}
-//- 	//- 				p #{event.date} at #{event.time}
-//- 	//- 				p Volunteer Quota: #{event.volunteerQuota}
-//- 	//- 				h3 Confirmed Volunteers
-//- 	//- 				//- List all of this event's volunteers beneath
 extends layout2
 
 block content
-	h1 Event Manager Dashboard
-	//- a(href="/getEvents/#{eventManager.id}") Confirmed Events
+	button.btn.btn-sm(href="/myEvents") My Events
+	button.btn.btn-sm(href="/myPendingEvents") My Volunteers
+	button.btn.btn-sm(href="/") Browse All Events
 
+	h1 Event Manager Dashboard
+
+	h3 Welcome, #{eventManager.name}!
+
+	button.btn.btn-sm.btn-primary(type='button' data-toggle='modal' data-target='#newEventModal') Add New Event
+
+	h4#myEvents My Events
+
+
+
+
+	#newEventModal.modal.fade
+		.modal-dialog
+			.modal-content
+				.modal-header
+					button.close(data-dismiss='modal') Close
+					h3 Add a New Event
+					h4 The best way to find volunteers, fast!
+				.modal-body
+					form(action='/addEvent' method='post')
+						.form-group
+							label.control-label
+								| Event Title:
+							input.form-control(type="text" name='title' placeholder='Event title')
+						.form-group
+							label.control-label
+								| Event Date:
+							input.form-control(type="text" name='date' placeholder='Date')
+						.form-group
+							label.control-label
+								| Event Time:
+							input.form-control(type="text" name='time' placeholder='Start time and end time')
+						.form-group
+							label.control-label
+								| Event Website:
+							input.form-control(type="text" name='url' placeholder='http://www.myevent.com/')
+						.form-group
+							label.control-label
+								| Venue Name:
+							input.form-control(type="text" name='location' placeholder='Venue Name')
+						.form-group
+							label.control-label
+								| Venue Address:
+							input.form-control(type="text" name='locationAddress' placeholder='Location of the event')
+						.form-group
+							label.control-label
+								| How many volunteers will you need?
+							input.form-control(type="text" name='volunteerQuota' placeholder='e.g. 50')
+						.form-group
+							label.control-label
+								| What time do you need volunteers to arrive at this event?
+							input.form-control(type="text" name='volunteerTime' placeholder='Start time for volunteers')
+						.form-group
+							label.control-label
+								| What perks are you offering your volunteers?
+							textarea.form-control(type="text" name='volunteerPerks' placeholder='e.g. Free admission, free t-shirt, buddy passes, etc.')
+						input.btn.btn-medium.btn-success(type="submit")

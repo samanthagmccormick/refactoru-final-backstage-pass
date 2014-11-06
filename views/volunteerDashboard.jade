@@ -8,14 +8,14 @@ extends layout
 
 block content
 	//- Sidebar/top nav: View Profile, Confirmed Events, Pending Events, Browse Events (Homepage)
-	//- a(href="/volunteerDashboard/#{volunteer.id}") View My Profile
-	a(href="/myEvents") My Confirmed Events
-	a(href="/myPendingEvents") My Pending Events
-	a(href="/") Browse All Events
+	button.btn.btn-sm(href="/v/#{volunteer.id}") View My Profile
+	button.btn.btn-sm(href="/myEvents") My Confirmed Events
+	button.btn.btn-sm(href="/myPendingEvents") My Pending Events
+	button.btn.btn-sm(href="/") Browse All Events
 
 	h1 Volunteer Dashboard	
 
-	h2 Profile
+	h4 My Profile
 	a(href='/edit') Edit Profile
 	//- img.img-responsive(src="#{volunteer.image}")
 	p #{volunteer.name}
@@ -25,8 +25,7 @@ block content
 	p #{volunteer.mobile}
 	p #{volunteer.confirmedEventIDs}
 
-	//- h2#confirmedEvents Confirmed Events
-	a(href="/getEvents/#{volunteer.id}") Confirmed Events
+	h4#confirmedEvents Confirmed Events
 	//- if the volunteer's ID is within the event's list of volunteerIDs
 		//- (var i = 0; i < event.volunteerIDs.length; i++) {
 		//- if (#{volunteer.id} === #{event.volunteer[i]}) {
@@ -35,7 +34,7 @@ block content
 		//- 	p You have no upcoming events.
 		//- }
 
-	h2#pendingEvents Pending Events
+	h4#pendingEvents Pending Events
 
 	//- a(href="/pendingEventsModal") Pending Events
 	//- if the volunteer's ID is within the event's list of volunteerIDs

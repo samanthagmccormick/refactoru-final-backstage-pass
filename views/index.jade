@@ -2,6 +2,8 @@ extends layout
 
 block content
 	h1 Backstage Pass
+	button.btn.btn-md.btn-primary(type='button' data-toggle='modal' data-target='#volunteerModal') Become a Volunteer
+	button.btn.btn-md.btn-success(type='button' data-toggle='modal' data-target='#eventManagerModal') Become an Event Manager
 	h2 Upcoming Events
 
 	for e in events
@@ -9,54 +11,53 @@ block content
 			img.img-responsive.floatleft.no-padding(src='http://www.placehold.it/380x300')
 			//- div(style='background-image: url(http://www.placehold.it/400x300);')
 			p.carousel-caption #{e.date} at #{e.time}
-	
 
-	h2 Sign Up
-	.col-lg-4.col-md-4.col-sm-4.col-xs.4
-		form.form-horizontal(action='/addVolunteer' method='post')
-			.form-group
-				label.control-label
-					| Name:
-				input.form-control(type="text" name='name' placeholder='Name')
-			.form-group
-				label.control-label
-					| Email Address:
-				input.form-control(type="text" name='email' placeholder='Email')
-			.form-group
-				label.control-label
-					| Cell Number:
-				input.form-control(type="text" name='mobile' placeholder='xxx-xxx-xxxx')
-			.form-group
-				label.control-label
-					| Your location:
-				input.form-control(type="text" name='location' placeholder='Where do you live?')
-			.form-group
-				label.control-label
-					| Tell us a little about yourself!
-				textarea.form-control(type="text" name='bio' placeholder='A little about yourself...')
-			input(type="submit")
+	#volunteerModal.modal.fade
+		.modal-dialog
+			.modal-content
+				.modal-header
+					button.close(data-dismiss='modal') Close
+					h3 Become a Volunteer!
+					h4 Create an account below.
+				.modal-body
+					form(action='/addVolunteer' method='post')
+						.form-group
+							label.control-label
+								| Name:
+							input.form-control(type="text" name='name' placeholder='Name')
+						.form-group
+							label.control-label
+								| Email Address:
+							input.form-control(type="text" name='email' placeholder='Email')
+						.form-group
+							label.control-label
+								| Cell Number:
+							input.form-control(type="text" name='mobile' placeholder='xxx-xxx-xxxx')
+						.form-group
+							label.control-label
+								| Your location:
+							input.form-control(type="text" name='location' placeholder='Where do you live?')
+						.form-group
+							label.control-label
+								| Tell us a little about yourself!
+							textarea.form-control(type="text" name='bio' placeholder='A little about yourself...')
+						input.btn.btn-medium.btn-success(type="submit")
 
-	h3 Volunteers
-		//- ul
-		//- 	for volunteer in volunteers
-		//- 		li
-		//- 			h4 #{volunteer.name}
-
-
-
-
-	//- h2 Add an Event
-	//- form(action='/addEvent' method ='post')
-	//- 	input(type="text" name='title' placeholder='Event title')
-	//- 	input(type="text" name='date' placeholder='Date')
-	//- 	input(type="text" name='time' placeholder='Time')
-	//- 	input(type="text" name='url' placeholder='Link to the event website')
-	//- 	input(type="text" name='volunteerQuota' placeholder='Number of volunteers you need')
-	//- 	input(type="text" name='volunteerTime' placeholder='Timeslot you need volunteers to be available')
-	//- 	input(type="submit")
-
-	//- h2 Event Preview
-	//- ul
-	//- 	for e in events
-	//- 		li
-	//- 			h4 e.title
+	#eventManagerModal.modal.fade
+		.modal-dialog
+			.modal-content
+				.modal-header
+					button.close(data-dismiss='modal') Close
+					h3 Become an Event Manager!
+					h4 Create an account below.
+				.modal-body
+					form(action='/addEventManager' method='post')
+						.form-group
+							label.control-label
+								| Name:
+							input.form-control(type="text" name='name' placeholder='Name')
+						.form-group
+							label.control-label
+								| Email Address:
+							input.form-control(type="text" name='email' placeholder='Email')
+						input.btn.btn-medium.btn-success(type="submit")
