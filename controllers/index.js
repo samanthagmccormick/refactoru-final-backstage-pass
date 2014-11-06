@@ -17,63 +17,78 @@ var indexController = {
 
 		// Get the data from the form body
 		var data = req.body;
-		var email = req.body.email;
 
 		// Use the submitted data to create a new applicant instance
 		var vol = new Volunteer(data);
 
 		// Save and THEN redirect
 		vol.save(function(err, result) {
-			// find the volunteer that is logged in, based on email
-			Volunteer.findOne({email: email}, function(err, result) {
-				// read User Authentication doc
-				console.log('Volunteer found: ', result);
+			console.log('result: ', result);
+			res.redirect('/volunteer/' + result._id);
+		});
+	},
+	renderVolunteer: function(req, res) {
+	// Render the new volunteer's dashboard
 
-				res.render('volunteerDashboard', {
-					volunteer: result
-				});
+		console.log(req.params);
+		// Find the volunteer that you just added to the database
+		Volunteer.findOne({_id: req.params.id}, function(err, result) {
+			console.log('Volunteer found: ', result);
+
+			// Render the new volunteer's dashboard
+			res.render('volunteerDashboard', {
+				volunteer: result
+				// user: req.user
 			});
-
 		});
 	},
 	addEventManager: function(req, res) {
 	// Add a new account and immediately get routed to your dashboard. 
 
 		var data = req.body;
-		var email = req.body.email;
 
 		// Use the submitted data to create a new applicant instance
 		var eMgr = new EventManager(data);
 
 		// Save and THEN redirect
 		eMgr.save(function(err, result) {
-			// find the event manager that just signed up, based on email
-			EventManager.findOne({email: email}, function(err, result) {
-				// read User Authentication doc
-				console.log('Event Manager found: ', result);
-
-				res.render('eventManagerDashboard', {
-					eventManager: result
-				});
-			});
+			console.log('result: ', result);
+			res.redirect('/eventManager/' + result._id);
 		});	
+	},
+	renderEventManager: function(req, res) {
+		console.log(req.params);
+		// Find the event that you just added to the database
+		EventManager.findOne({_id: req.params.id}, function(err, result) {
+			console.log('Event Manager found: ', result);
+
+			// Render the new eventManager dashboard
+			res.render('eventManagerDashboard', {
+				eventManager: result
+				// user: req.user
+			});
+		});
 	},
 	addNewEvent: function(req, res) {
 	// Add a new event and immediately get routed to that event page.
 
 		var data = req.body;
-		var title = req.body.title;
-
-		console.log('Event Title: ', title);
 
 		// Use the submitted data to create a new event instance
 		var ev = new Event(data);
 
 		// Save and THEN redirect
 		ev.save(function(err, result) {
+			console.log('result: ', result);
+			res.redirect('/viewEvent/' + result._id);
+		});
+	},
+	renderEvent: function(req, res) {
+	// Render the new event's landing page
 
+			console.log(req.params);
 			// Find the event that you just added to the database
-			Event.findOne({title: title}, function(err, result) {
+			Event.findOne({_id: req.params.id}, function(err, result) {
 				console.log('Event found: ', result);
 
 				// Render the new event page
@@ -81,7 +96,18 @@ var indexController = {
 					e: result
 				});
 			});
-		});
+	},
+	becomeVolunteer: function(req, res) {
+		// var id = req.params._id;
+		// console.log(id);
+
+		// Event.findOne({_id: id}, function(err, result) {
+		// 	// console.log('Result: ', result);
+		// 	result.volunteerIDs.push({
+		// 		volunteer: 
+		// 	});
+
+		// });
 	},
 	volunteerDash: function(req, res) {
 	// Route for visiting your volunteer dashboard

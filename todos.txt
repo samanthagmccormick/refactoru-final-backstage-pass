@@ -13,15 +13,13 @@ I want this app to solve problems for two different audiences:
 Features
 
 to do today:
-X Homepage, view seed events
-  ~ Backstage Pass: 'get in'
-X Volunteer dashboard
-  ~ Links: Profile (Edit/View), Confirmed Events, Pending Events, View All Events (Homepage)
-  X Volunteer profile (fill out information once and then use for all events)
-  X Link to homepage to view and search for upcoming events
-  ~ Section of upcoming confirmed events
-  ~ List of pending applications
+* .populate to make these databases 'act' relational - share information between events, eventmanagers, and volunteers
+* with .populate, be able to display all necessary info on volunteer and eventmanager dashboard
+  ~ Allow an event manager to add an event (tie his/her ID to that event)
+  ~ Allow a volunteer to apply for an event (push the volunteer's ID into that event)
 
+
+  
 
    * Homepage: Display upcoming events, and login buttons in upper right corner
       X Event seeds are done, displaying on the page.

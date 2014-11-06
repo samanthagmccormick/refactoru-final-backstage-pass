@@ -13,6 +13,7 @@ EventManager.find({}, function(err, results) {
 			id: 101,
 			name: 'James McDonald',
 			email: 'james@gmail.com',
+			password: 'bossman',
 			events: [11, 12, 13]
 		});
 

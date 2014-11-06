@@ -16,6 +16,8 @@
 
 var mongoose = require('mongoose');
 var Event = require('../event.js');
+var EventManager = require('../eventManager.js');
+var Volunteer = require('../volunteer.js');
 
 Event.find({}, function(err, results) {
 	if (results.length === 0) {
