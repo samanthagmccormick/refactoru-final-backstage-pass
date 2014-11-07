@@ -1,16 +1,16 @@
-var mongoose = require('mongoose');
+// var mongoose = require('mongoose');
 
-var volunteerSchema = mongoose.Schema({
-	id: Number,
-  name: String,
-	image: String,
-	email: String,
-	password: String,
-	mobile: String,
-	bio: String,
-	location: String,
-	confirmedEventIDs: [Number],
-	pendingEventIDs: [Number]
-});
+// var userSchema = mongoose.Schema({
+// 	id: Number,
+// 	role: String,
+// 	name: String,
+// 	image: String,
+// 	email: String,
+// 	password: String,
+// 	mobile: String,
+// 	bio: String,
+// 	location: String,
+// 	confirmedEventIDs: [Number]
+// });
 
-module.exports = mongoose.model('volunteer', volunteerSchema);
+// module.exports = mongoose.model('user', userSchema);

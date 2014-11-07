@@ -11,7 +11,7 @@ require('./models/seeds/eventManagerSeeds.js');
 require('./models/seeds/eventSeeds.js');
 
 // Connect to Mongoose database
-mongoose.connect('mongodb://localhost/test2');
+mongoose.connect('mongodb://localhost/test4');
 
 var app = express();
 app.set('view engine', 'jade');
@@ -24,16 +24,19 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/', indexController.index);
 
-app.post('/addVolunteer', indexController.addVolunteer);
-app.post('/addEventManager', indexController.addEventManager);
+app.post('/addUser', indexController.addUser);
+app.get('/user/:id', indexController.renderUser);
 
 app.post('/addNewEvent', indexController.addNewEvent);
 app.get('/viewEvent/:id', indexController.renderEvent);
 
 app.get('/becomeVolunteer/:_id', indexController.becomeVolunteer);
 
-app.get('/volunteer/:id', indexController.renderVolunteer);
-app.get('/eventManager/:id', indexController.renderEventManager);
+// app.post('/addVolunteer', indexController.addVolunteer);
+// app.post('/addEventManager', indexController.addEventManager);
+
+// app.get('/volunteer/:id', indexController.renderVolunteer);
+// app.get('/eventManager/:id', indexController.renderEventManager);
 
 var server = app.listen(9145, function() {
 	console.log('Express server listening on port ' + server.address().port);

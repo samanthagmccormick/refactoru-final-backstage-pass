@@ -2,8 +2,7 @@ extends layout
 
 block content
 	h1 Backstage Pass
-	button.btn.btn-md.btn-primary(type='button' data-toggle='modal' data-target='#volunteerModal') Become a Volunteer
-	button.btn.btn-md.btn-success(type='button' data-toggle='modal' data-target='#eventManagerModal') Become an Event Manager
+	button.btn.btn-md.btn-primary(type='button' data-toggle='modal' data-target='#volunteerModal') Join
 	h2 Upcoming Events
 
 	for e in events
@@ -18,10 +17,16 @@ block content
 			.modal-content
 				.modal-header
 					button.close(data-dismiss='modal') Close
-					h3 Become a Volunteer!
-					h4 Create an account below.
+					h3 Create an account below!
 				.modal-body
-					form(action='/addVolunteer' method='post')
+					form(action='/addUser' method='post')
+						
+						.form-group
+							label.control-label
+								| Are you a volunteer or an event manager?
+							select(name='role' type='text')
+								option.form-control(name='role' value='Volunteer') Volunteer
+								option.form-control(name='role' value='Event Manager') Event Manager
 						.form-group
 							label.control-label
 								| Name:
@@ -42,23 +47,4 @@ block content
 							label.control-label
 								| Tell us a little about yourself!
 							textarea.form-control(type="text" name='bio' placeholder='A little about yourself...')
-						input.btn.btn-medium.btn-success(type="submit")
-
-	#eventManagerModal.modal.fade
-		.modal-dialog
-			.modal-content
-				.modal-header
-					button.close(data-dismiss='modal') Close
-					h3 Become an Event Manager!
-					h4 Create an account below.
-				.modal-body
-					form(action='/addEventManager' method='post')
-						.form-group
-							label.control-label
-								| Name:
-							input.form-control(type="text" name='name' placeholder='Name')
-						.form-group
-							label.control-label
-								| Email Address:
-							input.form-control(type="email" name='email' placeholder='Email')
 						input.btn.btn-medium.btn-success(type="submit")

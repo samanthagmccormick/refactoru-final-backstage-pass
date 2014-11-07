@@ -1,0 +1,84 @@
+//- - Volunteer dashboard
+//-   ~ Links: Profile (Edit/View), Confirmed Events, Pending Events, View All Events (Homepage)
+//-   ~ Volunteer profile (fill out information once and then use for all events)
+//-   ~ Link to homepage to view and search for upcoming events
+//-   ~ Section of upcoming confirmed events
+//-   ~ List of pending applications
+extends layout
+
+block content
+	//- Sidebar/top nav: View Profile, Confirmed Events, Pending Events, Browse Events (Homepage)
+	
+	button.btn.btn-sm(href="/user/#{user.id}") View My Profile
+	button.btn.btn-sm(type='button' data-toggle='modal' data-target='#newEventModal') Add New Event
+	button.btn.btn-sm(href="/myEvents") My Confirmed Events
+	button.btn.btn-sm(href="/myPendingEvents") My Pending Events
+	button.btn.btn-sm(href="/") Browse All Events
+
+	h1 My #{user.role} Dashboard
+
+	h4 Profile
+	//- img.img-responsive(src="#{volunteer.image}")
+	p Username: #{user.name}
+	p About Me: #{user.bio}
+	p Email Address: #{user.email}
+	p Location: #{user.location}
+	p Mobile: #{user.mobile}
+
+	h4#confirmedEvents My Events
+	p #{user.confirmedEventIDs}
+
+	#newEventModal.modal.fade
+		.modal-dialog
+			.modal-content
+				.modal-header
+					button.close(data-dismiss='modal') Close
+					h3 Add a New Event
+				.modal-body
+					form(action='/addNewEvent' method='post')
+						.form-group
+							label.control-label
+								| Event Title:
+							input.form-control(type="text" name='title' placeholder='Event title')
+						.form-group
+							label.control-label
+								| Event Date:
+							input.form-control(type="date" name='date' placeholder='Date')
+						.form-group
+							label.control-label
+								| Start Time:
+							input.form-control(type="time" name='startTime' placeholder='Start time')
+						.form-group
+							label.control-label
+								| End Time:
+							input.form-control(type="time" name='endTime' placeholder='End time')
+						.form-group
+							label.control-label
+								| Event Website:
+							input.form-control(type="text" name='url' placeholder='http://www.myevent.com/')
+						.form-group
+							label.control-label
+								| Venue Name:
+							input.form-control(type="text" name='location' placeholder='Venue Name')
+						.form-group
+							label.control-label
+								| Venue Address:
+							input.form-control(type="text" name='locationAddress' placeholder='Location of the event')
+						.form-group
+							label.control-label
+								| How many volunteers will you need?
+							select(name='volunteerQuota' type='number')
+								option.form-control(name='volunteerQuota' value='10') 10
+								option.form-control(name='volunteerQuota' value='20') 20
+								option.form-control(name='volunteerQuota' value='30') 30
+								option.form-control(name='volunteerQuota' value='40') 40
+								option.form-control(name='volunteerQuota' value='50') 50
+						.form-group
+							label.control-label
+								| What time do you need volunteers to arrive at this event?
+							input.form-control(type="time" name='volunteerTime' placeholder='Start time for volunteers')
+						.form-group
+							label.control-label
+								| What perks are you offering your volunteers?
+							textarea.form-control(type="text" name='volunteerPerks' placeholder='e.g. Free admission, free t-shirt, buddy passes, etc.')
+						input.btn.btn-medium.btn-success(type="submit")
