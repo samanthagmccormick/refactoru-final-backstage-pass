@@ -6,5 +6,8 @@ block content
 	h2 #{e.title}
 	p Time: #{e.startTime} to #{e.endTime}
 
-	a.btn(href='/becomeVolunteer/#{e._id}') Apply to Volunteer
-	
+	a(href='/becomeVolunteer/#{e._id}') Apply to Volunteer
+
+	h4#volunteers Current Volunteers
+	for vol in e.volunteerIDs
+		li #{vol.name}

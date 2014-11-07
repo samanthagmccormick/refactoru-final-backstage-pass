@@ -9,24 +9,34 @@ extends layout
 block content
 	//- Sidebar/top nav: View Profile, Confirmed Events, Pending Events, Browse Events (Homepage)
 	
-	button.btn.btn-sm(href="/user/#{user.id}") View My Profile
+	//- button.btn.btn-sm(href="/user/#{user.id}") View My Profile
 	button.btn.btn-sm(type='button' data-toggle='modal' data-target='#newEventModal') Add New Event
 	button.btn.btn-sm(href="/myEvents") My Confirmed Events
 	button.btn.btn-sm(href="/myPendingEvents") My Pending Events
 	button.btn.btn-sm(href="/") Browse All Events
 
 	h1 My #{user.role} Dashboard
+	h3 Welcome, #{user.name}!
+
+	//- h1 My #{user.role} Dashboard
+
+	//- Give users a link to log out of their account
+	p: a(href="/auth/logout") Log out
 
 	h4 Profile
 	//- img.img-responsive(src="#{volunteer.image}")
-	p Username: #{user.name}
+	p Name: #{user.name}
 	p About Me: #{user.bio}
 	p Email Address: #{user.email}
 	p Location: #{user.location}
 	p Mobile: #{user.mobile}
 
 	h4#confirmedEvents My Events
-	p #{user.confirmedEventIDs}
+	for ev in user.confirmedEventIDs
+		li
+			a(href='/viewEvent/#{ev._id}') #{ev.title}
+
+	//- p #{user.confirmedEventIDs.title}
 
 	#newEventModal.modal.fade
 		.modal-dialog

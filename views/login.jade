@@ -1,23 +1,75 @@
-//- extends layout
+extends layout
 
-//- block content
-//-   //- Error comes through via the context passed when calling res.render('login', {...})
-//-   //- You'll see this in controllers/authentication.js
-//-   //- If the error exists, we'll display it.
-//-   if error
-//-     h3= Error
+block content
+  //- Error comes through via the context passed when calling res.render('login', {...})
+  //- You'll see this in controllers/authentication.js
+  //- If the error exists, we'll display it.
+  if error
+    h3= error
 
-//-   //- Form for handling existing user logins.
-//-   h1 Existing Users
-//-   form(action="/auth/login", method="post")
-//-     input(type="text", name="email", placeholder="Email Address")
-//-     input(type="password", name="password", placeholder="Password")
-//-     input(type="submit")
+  h1 Log In or Create an Account
 
-//-   //- Form for allowing new users to register.
-//-   h1 Register
-//-   form(action="/auth/signup", method="post")
-//-     input(type="text", name="name", placeholder="Name")
-//-     input(type="email", name="email", placeholder="Email Address")
-//-     input(type="password", name="password", placeholder="Password")
-//-     input(type="submit")
+  button.btn.btn-md.btn-success(type='button' data-toggle='modal' data-target='#joinModal') Join
+  button.btn.btn-md.btn-primary(type='button' data-toggle='modal' data-target='#loginModal') Login
+
+  #joinModal.modal.fade
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close(data-dismiss='modal') Close
+          h3 Create an account below!
+        .modal-body
+          form(action='/auth/signup' method='post')
+            .form-group
+              label.control-label
+                | Are you a volunteer or an event manager?
+              select(name='role' type='text')
+                option.form-control(name='role' value='Volunteer') Volunteer
+                option.form-control(name='role' value='Event Manager') Event Manager
+            .form-group
+              label.control-label
+                | Name:
+              input.form-control(type="text" name='name' placeholder='Name')
+            .form-group
+              label.control-label
+                | Choose a Username:
+              input.form-control(type="text" name='username' placeholder='Username')
+            .form-group
+              label.control-label
+                | Choose a Password:
+              input.form-control(type="text" name='password' placeholder='Password')
+            .form-group
+              label.control-label
+                | Email Address:
+              input.form-control(type="text" name='email' placeholder='Email')
+            .form-group
+              label.control-label
+                | Cell Number:
+              input.form-control(type="text" name='mobile' placeholder='xxx-xxx-xxxx')
+            .form-group
+              label.control-label
+                | Your location:
+              input.form-control(type="text" name='location' placeholder='Where do you live?')
+            .form-group
+              label.control-label
+                | Tell us a little about yourself!
+              textarea.form-control(type="text" name='bio' placeholder='A little about yourself...')
+            input.btn.btn-medium.btn-success(type="submit")
+
+  #loginModal.modal.fade
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close(data-dismiss='modal') Close
+          h3 Log In
+        .modal-body
+          form(action='/auth/login' method='post')
+            .form-group
+              label.control-label
+                | Username:
+              input.form-control(type="text" name='username' placeholder='Username')
+            .form-group
+              label.control-label
+                | Password:
+              input.form-control(type="text" name='password' placeholder='Password')
+            input.btn.btn-medium.btn-success(type="submit")

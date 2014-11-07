@@ -2,49 +2,14 @@ extends layout
 
 block content
 	h1 Backstage Pass
-	button.btn.btn-md.btn-primary(type='button' data-toggle='modal' data-target='#volunteerModal') Join
-	h2 Upcoming Events
+
+	//- Link to login screen
+	a(type="button" href="/auth/login") Go to Dashboard
+
+	h3 Upcoming Events
 
 	for e in events
 		.col-lg-4.col-md-4.col-sm-4.col-xs-12.no-padding
 			img.img-responsive.floatleft.no-padding(src='http://www.placehold.it/380x300')
 			//- div(style='background-image: url(http://www.placehold.it/400x300);')
-			p.carousel-caption #{e.title}
-				| #{e.date} from #{e.startTime} to #{e.endTime}
-
-	#volunteerModal.modal.fade
-		.modal-dialog
-			.modal-content
-				.modal-header
-					button.close(data-dismiss='modal') Close
-					h3 Create an account below!
-				.modal-body
-					form(action='/addUser' method='post')
-						
-						.form-group
-							label.control-label
-								| Are you a volunteer or an event manager?
-							select(name='role' type='text')
-								option.form-control(name='role' value='Volunteer') Volunteer
-								option.form-control(name='role' value='Event Manager') Event Manager
-						.form-group
-							label.control-label
-								| Name:
-							input.form-control(type="text" name='name' placeholder='Name')
-						.form-group
-							label.control-label
-								| Email Address:
-							input.form-control(type="email" name='email' placeholder='Email')
-						.form-group
-							label.control-label
-								| Cell Number:
-							input.form-control(type="text" name='mobile' placeholder='xxx-xxx-xxxx')
-						.form-group
-							label.control-label
-								| Your location:
-							input.form-control(type="text" name='location' placeholder='Where do you live?')
-						.form-group
-							label.control-label
-								| Tell us a little about yourself!
-							textarea.form-control(type="text" name='bio' placeholder='A little about yourself...')
-						input.btn.btn-medium.btn-success(type="submit")
+			a.carousel-caption(href="/viewEvent/#{e._id}") #{e.title}

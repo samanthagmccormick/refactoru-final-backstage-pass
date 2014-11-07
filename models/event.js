@@ -1,7 +1,9 @@
 var mongoose = require('mongoose');
 
+var User = require('./user');
+var ObjectId = User._id;
+
 var eventSchema = mongoose.Schema({
-	id: Number,
 	title: String,
 	date: String,
 	startTime: String,
@@ -14,7 +16,7 @@ var eventSchema = mongoose.Schema({
 	volunteerQuota: Number,
 	volunteerTime: String,
 	volunteerpm: Boolean,
-	volunteerIDs: [Number],
+	volunteerIDs: [ObjectId],
 	volunteerPerks: String,
 	owner: Number
 });

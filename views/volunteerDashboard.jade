@@ -8,40 +8,29 @@ extends layout
 
 block content
 	//- Sidebar/top nav: View Profile, Confirmed Events, Pending Events, Browse Events (Homepage)
-	//- button.btn.btn-sm(href="/#{volunteer.id}") View My Profile
+	
+	//- button.btn.btn-sm(href="/user/#{user.id}") View My Profile
 	button.btn.btn-sm(href="/myEvents") My Confirmed Events
 	button.btn.btn-sm(href="/myPendingEvents") My Pending Events
-	button.btn.btn-sm(href="/") Browse All Events
+	a.btn.btn-success(href="/") Browse All Events
 
-	h1 Volunteer Dashboard	
+	h1 My #{user.role} Dashboard
+	h3 Welcome, #{user.name}!
 
-	h4 My Profile
-	a(href='/edit') Edit Profile
+	//- h1 My #{user.role} Dashboard
+
+	//- Give users a link to log out of their account
+	p: a(href="/auth/logout") Log out
+
+	h4 Profile
 	//- img.img-responsive(src="#{volunteer.image}")
-	p #{volunteer.name}
-	p #{volunteer.bio}
-	p #{volunteer.email}
-	p #{volunteer.location}
-	p #{volunteer.mobile}
-	p #{volunteer.confirmedEventIDs}
+	p Name: #{user.name}
+	p About Me: #{user.bio}
+	p Email Address: #{user.email}
+	p Location: #{user.location}
+	p Mobile: #{user.mobile}
 
-	h4#confirmedEvents Confirmed Events
-	//- if the volunteer's ID is within the event's list of volunteerIDs
-		//- (var i = 0; i < event.volunteerIDs.length; i++) {
-		//- if (#{volunteer.id} === #{event.volunteer[i]}) {
-		//- 	p #{event.title} on #{event.date} at #{event.time}
-		//- } else {
-		//- 	p You have no upcoming events.
-		//- }
-
-	h4#pendingEvents Pending Events
-
-	//- a(href="/pendingEventsModal") Pending Events
-	//- if the volunteer's ID is within the event's list of volunteerIDs
-	//- for (var i = 0; i < event.volunteerIDs.length; i++) {
-	//- 	if (#{volunteer.id} === #{event.volunteer[i]}) {
-	//- 		p #{event.title} on #{event.date} at #{event.time}
-	//- 	} else {
-	//- 		p You have no pending events.
-	//- 	}
-	//- };
+	h4#confirmedEvents Events I'm Volunteering At
+	for ev in user.confirmedEventIDs
+		li
+			a(href='/viewEvent/#{ev._id}') #{ev.title}
