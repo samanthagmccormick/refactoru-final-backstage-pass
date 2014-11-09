@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
 
 var Event = require('./event');
+var User = require('./user');
 var ObjectId = Event._id;
 
 var userSchema = mongoose.Schema({

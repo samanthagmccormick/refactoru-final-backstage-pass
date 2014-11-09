@@ -13,18 +13,33 @@ I want this app to solve problems for two different audiences:
 Features
 
 to do today:
-* .populate to make these databases 'act' relational - share information between events, eventmanagers, and volunteers
-* with .populate, be able to display all necessary info on volunteer and eventmanager dashboard
-  ~ Allow an event manager to add an event (tie his/her ID to that event)
-  ~ Allow a volunteer to apply for an event (push the volunteer's ID into that event)
+X .populate to make these databases 'act' relational - share information between events, eventmanagers, and volunteers
+X with .populate, be able to display all necessary info on volunteer and eventmanager dashboard
+  X Allow an event manager to add an event (tie his/her ID to that event)
+  X Allow a volunteer to apply for an event (push the volunteer's ID into that event)
+
+DESIGN TO DO: 
+* Layout (nav bar)
+* Homepage
+* Event Page
+* Volunteer Dashboard
+* Event Manager Dashboard
+* Login Screen
+
+*** PROBLEM: Become a Volunteer is not pushing the entire event Object ID into the person's user data.
+X Need to be able to display all events AND all volunteer information on the Event Manager dashboard. Right now only showing ID's.
 
 
-  
+* Find out how to add photos to the database, especially for events.
 
-   * Homepage: Display upcoming events, and login buttons in upper right corner
+
+
+
+   * Homepage: Display upcoming events, and 
+      * ******HIGH PRIORITY:******* 'Go to Dashboard' in upper right corner - if you are logged in, it can automatically route you to your dashboard.
       X Event seeds are done, displaying on the page.
       ~ Design: TBD
-   * Event Manager Log-in: FB/Twitter, and email
+   X Event Manager Log-in: FB/Twitter, and email
    * Event Manager Dashboard (use Bootstrap)
       X Create Your Event ~ You’re creating a landing page for your event
       X Info needed:
@@ -35,17 +50,20 @@ to do today:
          * Volunteer details (time to show up, time to commit, requirements)
          * Volunteer Perks: free admission, free tshirt, etc.
          * Custom Application ~ not a top priority
-      * New volunteer applications (immediately appears when you get a new submission)
-      * Volunteer Roster (list of your accepted volunteer names, photos, contact info, etc.)
+      X New volunteer applications (appears when you get a new submission)
+      * Volunteer Roster - list the name and contact info of all the signed-up volunteers.
+         ~ Export to Excel
+      * Volunteer Count for each event (list of your accepted volunteer names, photos, contact info, etc.)
+         ~ Database stuff.. when a volunteer signs up, decrease the volunteercount by 1.
 
    * Volunteer Log-in: FB/Twitter, and cell phone OR email
    X Volunteer Dashboard (use Bootstrap)
-      * Pending applications
-      * Accepted applications / upcoming events
+      ~ LATER.... Pending applications
+      X Accepted applications / upcoming events
       * 1 day before the day of the event, the volunteer will receive a text reminder of the event, the time to show up, and any last-minute details
    X Volunteer Application (a simple form)
-      * fields can be saved and re-used for other event applications?
-      * Application data gets saved in a database and can be seen by the event manager
+      X fields can be saved and re-used for other event applications?
+      X Application data gets saved in a database and can be seen by the event manager
 
    * Event Landing Page
       * Large picture

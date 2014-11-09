@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 
+var Event = require('./event');
 var User = require('./user');
 var ObjectId = User._id;
 
@@ -13,12 +14,19 @@ var eventSchema = mongoose.Schema({
 	locationAddress: String,
 	url: String,
 	image: String,
-	volunteerQuota: Number,
+	volunteerQuota: {
+		type: Number,
+		default: 0
+	},
+	volunteerCount: {
+		type: Number,
+		default: 0
+	},
 	volunteerTime: String,
 	volunteerpm: Boolean,
 	volunteerIDs: [ObjectId],
 	volunteerPerks: String,
-	owner: Number
+	owner: [ObjectId]
 });
 
 module.exports = mongoose.model('event', eventSchema);

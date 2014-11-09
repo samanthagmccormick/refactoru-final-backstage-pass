@@ -1,13 +1,12 @@
 extends layout
 
 block content
-	h1 This is a new event
 
-	h2 #{e.title}
-	p Time: #{e.startTime} to #{e.endTime}
+    h1 #{e.title}
+    p Time: #{e.startTime} to #{e.endTime}
 
-	a(href='/becomeVolunteer/#{e._id}') Apply to Volunteer
+    a(href='/becomeVolunteer/#{e._id}') Apply to Volunteer
 
-	h4#volunteers Current Volunteers
-	for vol in e.volunteerIDs
-		li #{vol.name}
+    h4#volunteers This event currently has #{e.volunteerIDs.length} volunteer(s) and needs #{e.volunteerQuota} more
+    for vol in e.volunteerIDs
+        li #{vol.name}

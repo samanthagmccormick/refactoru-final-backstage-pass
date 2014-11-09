@@ -7,30 +7,72 @@
 extends layout
 
 block content
-	//- Sidebar/top nav: View Profile, Confirmed Events, Pending Events, Browse Events (Homepage)
-	
-	//- button.btn.btn-sm(href="/user/#{user.id}") View My Profile
-	button.btn.btn-sm(href="/myEvents") My Confirmed Events
-	button.btn.btn-sm(href="/myPendingEvents") My Pending Events
-	a.btn.btn-success(href="/") Browse All Events
-
-	h1 My #{user.role} Dashboard
-	h3 Welcome, #{user.name}!
-
-	//- h1 My #{user.role} Dashboard
-
-	//- Give users a link to log out of their account
-	p: a(href="/auth/logout") Log out
-
-	h4 Profile
-	//- img.img-responsive(src="#{volunteer.image}")
-	p Name: #{user.name}
-	p About Me: #{user.bio}
-	p Email Address: #{user.email}
-	p Location: #{user.location}
-	p Mobile: #{user.mobile}
-
-	h4#confirmedEvents Events I'm Volunteering At
-	for ev in user.confirmedEventIDs
-		li
-			a(href='/viewEvent/#{ev._id}') #{ev.title}
+	.container
+		h1 My #{user.role} Dashboard
+		h3 Welcome, #{user.name}!
+	.container-fluid
+		.row
+			.bhoechie-tab-container
+				.col-lg-2.col-md-2.col-sm-2.col-xs-2.bhoechie-tab-menu
+					.list-group
+						a.list-group-item.active.text-center(href="#")
+							h4
+								i.fa.fa-lg.fa-user
+							p Profile
+						a.list-group-item.text-center(href="#")
+							h4
+								i.fa.fa-lg.fa-calendar
+							p Confirmed Events
+						a.list-group-item.text-center(href="#")
+							h4
+								i.fa.fa-lg.fa-cogs
+							p Pending Events
+						a.list-group-item.text-center(href="#")
+							h4
+								i.fa.fa-lg.fa-power-off
+							p Log Out				
+				.col-lg-10.col-md-10.col-sm-10.col-xs-10.bhoechie-tab
+					.bhoechie-tab-content.active
+						center
+							img.profile.img-responsive.img-circle(src="/images/jenn.jpg" width="30%")
+							h4
+								i.fa.fa-2x.fa-user
+							h4.paddingbottom #{user.name}
+							p.heading About Me
+							p #{user.bio}
+							p.heading Location
+							p #{user.location}
+							p.heading Email Address
+							p #{user.email}
+							p.heading Mobile Phone
+							p #{user.mobile}
+					.bhoechie-tab-content
+						center
+							h4
+								i.fa.fa-2x.fa-calendar
+							h4.paddingbottom Confirmed Events
+							for ev in user.confirmedEventIDs
+								ul.event-list
+									li
+										time.datetime
+											span.day #{ev.date}
+										img.img-responsive(src='https://farm4.staticflickr.com/3100/2693171833_3545fb852c_q.jpg')
+										.info
+											a(href='/viewEvent/#{ev._id}') 
+												h2.title #{ev.title}
+											p.desc Volunteer Start Time: 
+												| #{ev.volunteerTime}
+											p.desc Event Time: #{ev.startTime} to #{ev.endTime}
+					.bhoechie-tab-content
+						center
+							h4
+								i.fa.fa-2x.fa-cogs
+							h4.paddingbottom Pending Events
+							p This is a future feature!
+					.bhoechie-tab-content
+						center
+							h4
+								i.fa.fa-2x.fa-power-off
+							h4.paddingbottom Log Out
+							p.heading Do you really want to log out?
+							a.btn.btn-md.btn-danger(href="/auth/logout") Yes, log me out!

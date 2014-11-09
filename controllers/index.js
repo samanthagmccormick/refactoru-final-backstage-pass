@@ -15,20 +15,29 @@ var indexController = {
 	renderUser: function(req, res) {
 	// Render the new user's dashboard
 
-		// Find the user that you just added to the database
-		User.findOne({_id: req.user._id}).populate('confirmedEventIDs', null, 'event').exec(function(err, result) {
-			console.log('User found: ', result);
+		Event.find({owner: req.user._id}).populate('volunteerIDs', null, 'user').exec(function(err, myEvents) {
+			console.log('All events: ', myEvents);
 
-			if (req.user.role === 'Volunteer') {
-				// Render the new volunteer's dashboard
-				res.render('volunteerDashboard', {
-					user: result
-				});
-			} else if (req.user.role === 'Event Manager') {
-				res.render('eventManagerDashboard', {
-					user: result
-				})
-			}
+			// Find the user that you just added to the database
+			User.findOne({_id: req.user._id}).populate('confirmedEventIDs', null, 'event').populate('volunteerIDs', null, 'user').exec(function(err, result) {
+				// console.log('User found: ', result);
+
+				console.log('All events in users ', myEvents);
+				if (req.user.role === 'Volunteer') {
+					// Render the new volunteer's dashboard
+					res.render('volunteerDashboard', {
+						user: result,
+						events: myEvents
+					});
+				} else if (req.user.role === 'Event Manager') {
+					res.render('eventManagerDashboard', {
+						user: result,
+						events: myEvents
+					});
+				}
+			});
+
+
 		});
 	},
 	addNewEvent: function(req, res) {
@@ -43,6 +52,11 @@ var indexController = {
 
 		// Save and THEN redirect
 		ev.save(function(err, ev) {
+
+			// update this event to include this event manager's ID as the owner of the event
+			ev.update({owner: req.user._id}, {$push: {owner: req.user._id}}, function(err, result) {
+				console.log('updated event: ', result);
+			});
 
 			// Update the user to include this new event that he/she created!
 			User.update({_id: req.user._id}, {$push: {confirmedEventIDs: ev._id}}, function(err, result){
@@ -68,9 +82,10 @@ var indexController = {
 		});
 	},
 	becomeVolunteer: function(req, res) {
-		if (!req.user) {
-			console.log('sorry, youre not logged in!');
-		} else {
+		// if (!req.user) {
+		// 	console.log('sorry, youre not logged in!');
+		// 	res.redirect('/auth/login');
+		// } else {
 
 		console.log('Current logged in user: ', req.user.name, 'current user ID: ', req.user._id);
 		console.log('Current event: ', req.params._id);
@@ -78,6 +93,12 @@ var indexController = {
 			// Update the user to include info about this new event
 			User.update({_id: req.user._id}, {$push: {confirmedEventIDs: req.params._id}}, function(err, result) {
 				console.log('updated user: ', result);
+
+				// Find the user that you just added to the database
+				User.findOne({_id: req.user._id}).populate('confirmedEventIDs', null, 'event').exec(function(err, result) {
+					// console.log('User found: ', result);
+				});
+
 			});
 
 			// Update the event to include this new volunteer!
@@ -88,7 +109,7 @@ var indexController = {
 			});
 
 		}
-	}
+	// }
 };
 
 module.exports = indexController;
