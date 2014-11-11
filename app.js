@@ -2,6 +2,9 @@ var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
+// This allows express to parse incoming files from forms
+var multer = require('multer');
+
 // Controllers
 var indexController = require('./controllers/index.js');
 // Passport controller:
@@ -30,7 +33,7 @@ var passportConfig = require('./config/passport');
 require('./models/seeds/eventSeeds.js');
 
 // Connect to Mongoose database
-mongoose.connect('mongodb://localhost/test6');
+mongoose.connect('mongodb://localhost/test8');
 
 var app = express();
 app.set('view engine', 'jade');

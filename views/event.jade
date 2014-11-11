@@ -1,12 +1,18 @@
 extends layout
 
 block content
+	.div.bg.img-responsive
+		.container
+			.row
+				.col-lg-4
+					a.eventimg(href="/viewEvent/#{e._id}")
+						img.eventimg.img-responsive.floatleft.no-padding(src='#{e.image}')
+						a.eventimg.caption(href="/viewEvent/#{e._id}") #{e.title}
 
-    h1 #{e.title}
-    p Time: #{e.startTime} to #{e.endTime}
+			h1 #{e.title}
+			p Time: #{e.startTime} to #{e.endTime}
+			a(href='/becomeVolunteer/#{e._id}') Apply to Volunteer
 
-    a(href='/becomeVolunteer/#{e._id}') Apply to Volunteer
-
-    h4#volunteers This event currently has #{e.volunteerIDs.length} volunteer(s) and needs #{e.volunteerQuota} more
-    for vol in e.volunteerIDs
-        li #{vol.name}
+			h4#volunteers This event currently has #{e.volunteerIDs.length} volunteer(s) and needs #{e.volunteerQuota} more
+			for vol in e.volunteerIDs
+				li #{vol.name}

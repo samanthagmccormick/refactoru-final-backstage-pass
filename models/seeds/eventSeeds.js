@@ -21,14 +21,15 @@ Event.find({}, function(err, results) {
 	if (results.length === 0) {
 		var tedxboulder = new Event({
 			title: 'TEDxBoulder',
-			date: 'December 21, 2014',
-			startTime: '5:30',
-			endTime: '10:00',
+			date: 'Dec 21, 2014',
+			startTime: '5:30pm',
+			endTime: '10:00pm',
 			pm: true,
 			location: 'Macky Auditorium',
 			locationAddress: '285 University Ave, Boulder, CO 80309',
 			url: 'http://www.tedxboulder.com/',
-			image: 'http://philanthropiece.org/wp-content/uploads/2013/10/TEDxBoulder-Creativewerd.jpg',
+			image: '/images/smallphoto/tedxboulder.png',
+			img_lg: '/images/largephoto/tedxboulder.png',
 			volunteerQuota: 50,
 			volunteerTime: '3:00',
 			volunteerpm: true,
@@ -37,39 +38,100 @@ Event.find({}, function(err, results) {
 	
 		tedxboulder.save();
 
+		var xgames = new Event({
+			title: 'X-Games',
+			date: 'Jan 22-25, 2015',
+			startTime: '4:00pm',
+			endTime: '9:30pm',
+			pm: true,
+			location: 'Buttermilk Mountain',
+			locationAddress: 'Downtown Aspen, Colorado 81611',
+			url: 'http://xgames.espn.go.com/',
+			image: '/images/smallphoto/xgames.png',
+			img_lg: '',
+			volunteerQuota: 30,
+			volunteerTime: '1:00pm',
+			volunteerpm: true,
+			volunteerPerks: 'Free all-access pass, free 4-show ticket, tshirt'
+		});
+
+		xgames.save();
+
 		var frozendeadguydays = new Event({
 			title: 'Frozen Dead Guy Days',
-			date: 'March 13, 2014',
-			startTime: '10:30',
-			endTime: '8:00',
+			date: 'Mar 13, 2014',
+			startTime: '10:30am',
+			endTime: '8:00pm',
 			pm: true,
 			location: 'Downtown Nederland',
 			locationAddress: '1 Main Street, Nederland, CO, 80466',
 			url: 'http://frozendeadguydays.org/',
-			image: 'http://frozendeadguydays.org/wp-content/uploads/FDGD15_Banner.jpg',
+			image: '/images/smallphoto/frozen.png',
+			image_lg: '/images/largephoto/frozen.jpg',
 			volunteerQuota: 80,
 			volunteerTime: '12:00',
 			volunteerpm: true,
-			volunteerPerks: 'Free admission all weekend, free entry fee for 1 game/activity (please sign up online ahead of time), and 2 free drink tickets for the Beer Tent.'		});
+			volunteerPerks: 'Free admission all weekend, free entry fee for 1 game/activity (please sign up online ahead of time), and 2 free drink tickets for the Beer Tent.'	
+		});
 
 		frozendeadguydays.save();
 
-		var igniteboulder = new Event({
-			title: 'Ignite Boulder',
-			date: 'December 11, 2014',
-			startTime: '5:30',
-			endTime: '10:30',
+		var gabf = new Event({
+			title: 'Great American Beer Festival',
+			date: 'Sept 24-26, 2015',
+			startTime: '10:00am',
+			endTime: '10:00pm',
 			pm: true,
-			location: 'The Boulder Theater',
-			locationAddress: '2032 14th St, Boulder, CO 80302',
-			url: 'http://igniteboulder.com/',
-			image: 'http://igniteboulder.com/wp/wp-content/themes/ArtSee/images/logo.png',
-			volunteerQuota: 30,
-			volunteerTime: '4:00',
+			location: 'Colorado Convention Center',
+			locationAddress: '700 14th Street, Hall F, Denver, Colorado 80202',
+			url: 'http://www.greatamericanbeerfestival.com/',
+			image: '/images/smallphoto/gabf.png',
+			img_lg: '/images/largephoto/gabf.jpg',
+			volunteerQuota: 100,
+			volunteerTime: '12:00pm',
 			volunteerpm: true,
-			volunteerPerks: 'Free admission, 1 free drink ticket for the bar, 1 free entry in a giveaway, and all the free stickers you could ever want....'		});
+			volunteerPerks: '1-day festival pass, unlimited beer tastings, 1 comped meal, free pint glass, free tshirt!'
+		});
 
-		igniteboulder.save();
+		gabf.save();
+
+		var nitrofest = new Event({
+			title: 'Nitrofest',
+			date: 'Sept 15, 2014',
+			startTime: '10:00am',
+			endTime: '10:00pm',
+			pm: true,
+			location: 'Colorado Convention Center',
+			locationAddress: '700 14th Street, Hall F, Denver, Colorado 80202',
+			url: 'http://www.greatamericanbeerfestival.com/',
+			image: '/images/smallphoto/nitrofest.png',
+			img_lg: '/images/largephoto/nitrofest.jpg',
+			volunteerQuota: 100,
+			volunteerTime: '12:00pm',
+			volunteerpm: true,
+			volunteerPerks: 'Free admission, unlimited beer tastings, 1 comped meal, free pint glass, free tshirt!'
+		});
+
+		nitrofest.save();
+
+		var higher = new Event({
+			title: 'Higher: Premier at the Boulder Theater',
+			date: 'Nov 21, 2014',
+			startTime: '7:00pm',
+			endTime: '9:30pm',
+			pm: true,
+			location: 'Boulder Theater',
+			locationAddress: '2032 14th Street, Boulder, Colorado 80302',
+			url: 'http://www.tetongravity.com/',
+			image: '/images/smallphoto/higher.png',
+			img_lg: '',
+			volunteerQuota: 50,
+			volunteerTime: '7:00am',
+			volunteerpm: true,
+			volunteerPerks: '1-day festival pass, free tshirt, free wine glass.'
+		});
+
+		higher.save();
 
 	} // end if statement
 

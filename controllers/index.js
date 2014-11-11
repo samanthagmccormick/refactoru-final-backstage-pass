@@ -4,6 +4,7 @@ var Event = require('../models/event.js');
 var indexController = {
 	// display events on the homepage
 	index: function(req, res) {
+
 		Event.find({}, function(err, results) {
 			// find all records, then render
 			res.render('index', {
@@ -11,18 +12,18 @@ var indexController = {
 				user: req.user
 			});
 		});
+
 	},
 	renderUser: function(req, res) {
 	// Render the new user's dashboard
-
 		Event.find({owner: req.user._id}).populate('volunteerIDs', null, 'user').exec(function(err, myEvents) {
-			console.log('All events: ', myEvents);
+			// console.log('All events: ', myEvents);
 
 			// Find the user that you just added to the database
 			User.findOne({_id: req.user._id}).populate('confirmedEventIDs', null, 'event').populate('volunteerIDs', null, 'user').exec(function(err, result) {
 				// console.log('User found: ', result);
 
-				console.log('All events in users ', myEvents);
+				// console.log('All events in users ', myEvents);
 				if (req.user.role === 'Volunteer') {
 					// Render the new volunteer's dashboard
 					res.render('volunteerDashboard', {
@@ -109,7 +110,6 @@ var indexController = {
 			});
 
 		}
-	// }
 };
 
 module.exports = indexController;

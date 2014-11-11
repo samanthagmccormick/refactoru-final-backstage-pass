@@ -3,12 +3,11 @@ extends layout
 block content
 	.container
 		//- Link to login screen
-		a(type="button" href="/auth/login") Go to Dashboard
-
 		h3 Upcoming Events
 
-		for e in events
-			.col-lg-4.col-md-4.col-sm-4.col-xs-12.no-padding
-				img.img-responsive.floatleft.no-padding(src='http://www.placehold.it/380x300')
-				//- div(style='background-image: url(http://www.placehold.it/400x300);')
-				a.carousel-caption(href="/viewEvent/#{e._id}") #{e.title}
+		.row
+			for e in events
+				.div.col-lg-4.col-md-4.col-sm-6.col-xs-6.no-padding
+					a.eventimg(href="/viewEvent/#{e._id}")
+						img.eventimg.img-responsive.floatleft.no-padding(src='#{e.image}')
+						a.eventimg.caption(href="/viewEvent/#{e._id}") #{e.title}

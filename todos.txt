@@ -12,25 +12,21 @@ I want this app to solve problems for two different audiences:
 
 Features
 
-to do today:
-X .populate to make these databases 'act' relational - share information between events, eventmanagers, and volunteers
-X with .populate, be able to display all necessary info on volunteer and eventmanager dashboard
-  X Allow an event manager to add an event (tie his/her ID to that event)
-  X Allow a volunteer to apply for an event (push the volunteer's ID into that event)
+TO DO TODAY:
 
-DESIGN TO DO: 
+Design
 * Layout (nav bar)
-* Homepage
-* Event Page
-* Volunteer Dashboard
-* Event Manager Dashboard
-* Login Screen
+~~~ * Homepage 
+~~~ * Event Page
+X Volunteer Dashboard
+X Event Manager Dashboard
+X Login Screen
 
-*** PROBLEM: Become a Volunteer is not pushing the entire event Object ID into the person's user data.
-X Need to be able to display all events AND all volunteer information on the Event Manager dashboard. Right now only showing ID's.
+* IMG URL in form for events
+* Add imgs to event seeds
+~~~~ * Volunteer Count for each event (list of your accepted volunteer names, photos, contact info, etc.)
+         ~ Database stuff.. when a volunteer signs up, decrease the volunteercount by 1.
 
-
-* Find out how to add photos to the database, especially for events.
 
 
 
@@ -51,12 +47,11 @@ X Need to be able to display all events AND all volunteer information on the Eve
          * Volunteer Perks: free admission, free tshirt, etc.
          * Custom Application ~ not a top priority
       X New volunteer applications (appears when you get a new submission)
-      * Volunteer Roster - list the name and contact info of all the signed-up volunteers.
+      X Volunteer Roster - list the name and contact info of all the signed-up volunteers.
          ~ Export to Excel
-      * Volunteer Count for each event (list of your accepted volunteer names, photos, contact info, etc.)
-         ~ Database stuff.. when a volunteer signs up, decrease the volunteercount by 1.
 
-   * Volunteer Log-in: FB/Twitter, and cell phone OR email
+
+   X Volunteer Log-in
    X Volunteer Dashboard (use Bootstrap)
       ~ LATER.... Pending applications
       X Accepted applications / upcoming events
@@ -65,9 +60,6 @@ X Need to be able to display all events AND all volunteer information on the Eve
       X fields can be saved and re-used for other event applications?
       X Application data gets saved in a database and can be seen by the event manager
 
-   * Event Landing Page
-      * Large picture
-      * Social media buttons
   
   * ..... Lower Priority Features ..... *
 
@@ -75,6 +67,7 @@ X Need to be able to display all events AND all volunteer information on the Eve
       * When the volunteer gets to the event, they can check in on their phone to earn points
    * Calendar integration (export this event / volunteer details to your calendar)
    * Social media feed on the homepage
+   *** PROBLEM: Become a Volunteer is not pushing the entire event Object ID into the person's user data.
  
 
 Technologies
