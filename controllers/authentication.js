@@ -83,6 +83,9 @@ var authenticationController = {
   // assume that they are ready to log in, so we do that as well.
   processSignup: function(req, res, next){
 
+    // Random images
+    var images = ['http://oi62.tinypic.com/4jxe01.jpg', 'http://oi61.tinypic.com/xnhsn8.jpg', 'http://oi57.tinypic.com/2ir7ns8.jpg', 'http://oi59.tinypic.com/14vpbma.jpg', 'http://oi61.tinypic.com/mvnpc3.jpg', 'http://oi59.tinypic.com/k2b60h.jpg'];
+   
     // Create a new instance of the User model with the data passed to this
     // handler. By using "param," we can safely assume that this route will
     // work regardless of how the data is sent (post, get).
@@ -93,6 +96,7 @@ var authenticationController = {
       name: req.param('name'),
       username: req.param('username'),
       password: req.param('password'),
+      image: images[Math.floor(Math.random()*(images.length-1))],
       email: req.param('email'),
       mobile: req.param('mobile'),
       location: req.param('location'),
