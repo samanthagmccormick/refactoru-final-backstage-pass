@@ -95,6 +95,7 @@ app.get('/user/:_username', indexController.renderUser);
 app.use(passportConfig.ensureAuthenticated);
 app.get('/user/:username', indexController.renderUser);
 
-var server = app.listen(9145, function() {
+var port = process.env.PORT || 9145;
+var server = app.listen(port, function() {
 	console.log('Express server listening on port ' + server.address().port);
 });
