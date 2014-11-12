@@ -3,7 +3,7 @@ extends layout
 block content
 	.container
 		.col-lg-2.col-md-2.col-sm-2.col-xs-4
-			img.img-responsive.img-circle.profile2(src="/images/jenn.jpg")
+			img.img-responsive.img-circle.profile2(src="#{user.image}")
 		.col-lg-10.col-md-10.col-sm-10.col-xs-6
 			h1.yellow My #{user.role} Dashboard
 			h3.yellow Welcome, #{user.name}!
