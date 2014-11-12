@@ -22,6 +22,7 @@ var eventSchema = mongoose.Schema({
 	volunteerpm: Boolean,
 	volunteerIDs: [ObjectId],
 	volunteerPerks: String,
+	otherInfo: String,
 	owner: [ObjectId]
 });
 

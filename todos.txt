@@ -16,9 +16,9 @@ TO DO TODAY:
 
 Design
 * Layout (nav bar)
-X * Homepage 
-X * Event Page
-   * Add spacing to volunteer list
+X Homepage 
+X Event Page
+   X Add spacing to volunteer list
 X Volunteer Dashboard
 X Event Manager Dashboard
 X Login Screen
@@ -30,12 +30,12 @@ X Volunteer Count for each event (list of your accepted volunteer names, photos,
 
 
 
-   * Homepage: Display upcoming events, and 
-      * ******HIGH PRIORITY:******* 'Go to Dashboard' in upper right corner - if you are logged in, it can automatically route you to your dashboard.
+   X Homepage: Display upcoming events, and 
+      X ******HIGH PRIORITY:******* 'Go to Dashboard' in upper right corner - if you are logged in, it can automatically route you to your dashboard.
       X Event seeds are done, displaying on the page.
-      ~ Design: TBD
+      X Design: TBD
    X Event Manager Log-in: FB/Twitter, and email
-   * Event Manager Dashboard (use Bootstrap)
+   X Event Manager Dashboard (use Bootstrap)
       X Create Your Event ~ You’re creating a landing page for your event
       X Info needed:
          * Event webpage
@@ -78,3 +78,10 @@ Technologies
       * Mongoose schemas for volunteers, event managers, and events
    * Heroku - an actual server
    * AJAX - to make small, quick, partial requests to the database, and display quickly to the client, without refreshing the entire page
+
+Presentation
+   * Visit an event page
+   * Sign up Event Manager
+      * Add an event
+   * Sign up Volunteer
+      * Become a Volunteer for an Event

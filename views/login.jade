@@ -56,7 +56,8 @@ block content
                 label.control-label
                   | Tell us a little about yourself!
                 textarea.form-control(type="text" name='bio' placeholder='A little about yourself...')
-              input.btn.btn-medium.btn-success(type="submit")
+              .center
+                input.btn.ghost-btn-red(type="submit")
 
     #loginModal.modal.fade
       .modal-dialog
@@ -74,4 +75,5 @@ block content
                 label.control-label
                   | Password:
                 input.form-control(type="text" name='password' placeholder='Password')
-              input.btn.btn-medium.btn-success(type="submit")
+              .center
+                input.btn.ghost-btn-red(type="submit")

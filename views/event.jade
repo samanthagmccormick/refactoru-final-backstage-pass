@@ -18,20 +18,26 @@ block content
 						a.ghost-btn-red(href='/becomeVolunteer/#{e._id}') Be a Volunteer
 
 
-		.container.eventheader
+		.container.eventbody
 			.row
 				.col-lg-8.col-md-8.col-sm-8.col-xs-12
-					h2#huge EVENT LOCATION
+					h2#wide EVENT LOCATION
 					p.white #{e.location} (#{e.locationAddress})
-					h2#huge VOLUNTEER DETAILS
-					p.white What you get: #{e.volunteerPerks}
-					p.white Please arrive to set up at #{e.volunteerTime}!
+					h2#wide VOLUNTEER PERKS
+					p.white #{e.volunteerPerks}
+					h2#wide PLEASE ARRIVE AT
+					p.white Volunteers should arrive to set up at #{e.volunteerTime}!
+					if e.otherInfo
+						h2#wide OTHER INFORMATION
+						p.white #{e.otherInfo}
+					h2#wide WEBSITE
+					a.yellow(href='#{e.url}') Official Website
 				.col-lg-4.col-md-4.col-sm-4.col-xs-12
-					h2 VOLUNTEERS
+					h2#widesmall VOLUNTEERS
 					for vol in e.volunteerIDs
 						.row.padding-bottom
 							.col-lg-4.col-md-4.col-sm-4.col-xs-4
-								img.img-responsive.img-circle.profile(src='/images/jenn.jpg')
+								img.img-responsive.img-circle.profile2(src='/images/jenn.jpg')
 							.col-lg-8.col-md-8.col-sm-8.col-xs-8
 								p
 									strong #{vol.name} <br />
