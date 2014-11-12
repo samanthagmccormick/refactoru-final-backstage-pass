@@ -1,18 +1,3 @@
-// var eventSchema = mongoose.Schema({
-// 	title: String,
-// 	date: String,
-// 	time: Number,
-// 	pm: Boolean,
-// 	location: String,
-// 	locationAddress: String,
-// 	url: String,
-// 	image: String,
-// 	volunteerQuota: Number,
-// 	volunteerTime: Number,
-// 	volunteerpm: Boolean,
-// 	volunteerIDs: [Number],
-//  owner: Number
-// });
 
 var mongoose = require('mongoose');
 var Event = require('../event.js');

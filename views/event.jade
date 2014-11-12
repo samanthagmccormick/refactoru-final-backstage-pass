@@ -11,10 +11,6 @@ block content
 					.col-lg-8.col-md-8.col-sm-8.col-xs-12.eventheader
 						h1 #{e.title} on #{e.date}
 						h4 #{e.startTime} to #{e.endTime}
-						h4 This event currently has 
-							strong #{e.volunteerIDs.length} volunteer(s) 
-							| and needs 
-							strong.redder #{e.volunteerQuota} more
 						a.ghost-btn-red(href='/becomeVolunteer/#{e._id}') Be a Volunteer
 
 
@@ -34,6 +30,10 @@ block content
 					a.yellow(href='#{e.url}') Official Website
 				.col-lg-4.col-md-4.col-sm-4.col-xs-12
 					h2#widesmall VOLUNTEERS
+					h4 This event currently has 
+						strong #{e.volunteerIDs.length} volunteer(s) 
+						| and needs 
+						strong.redder #{e.volunteerQuota} more
 					for vol in e.volunteerIDs
 						.row.padding-bottom
 							.col-lg-4.col-md-4.col-sm-4.col-xs-4

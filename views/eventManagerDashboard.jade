@@ -9,7 +9,7 @@ extends layout
 block content
 	.container
 		.col-lg-2.col-md-2.col-sm-2.col-xs-4
-			img.img-responsive.img-circle.profile(src="#{user.image}")
+			img.img-responsive.img-circle.profile(src="/images/frank.jpg")
 		.col-lg-10.col-md-10.col-sm-10.col-xs-6
 			h1.red My #{user.role} Dashboard
 			h3.red Welcome, #{user.name}!
@@ -42,7 +42,7 @@ block content
 					//- PROFILE
 					.bhoechie-tab-content.active
 						center
-							img.profile.img-responsive.img-circle(src="#{user.image}" width="30%")
+							img.profile.img-responsive.img-circle(src="/images/frank.jpg" width="30%")
 							h4
 								i.fa.fa-2x.fa-user
 							h4.paddingbottom #{user.name}
