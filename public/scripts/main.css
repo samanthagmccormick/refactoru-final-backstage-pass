@@ -96,6 +96,10 @@ a:hover {
   filter: alpha(opacity=50);
 }
 
+.height {
+  height: 298px;
+}
+
 /* Event Page */
 
 .bg {
