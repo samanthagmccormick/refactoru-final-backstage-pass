@@ -1,18 +1,38 @@
 extends layout
 
 block content
-	.div.bg.img-responsive
-		.container
+		.bg
+			.container
+				.row
+					.col-lg-4.col-md-4.col-sm-4.col-xs-12.no-padding
+						a.eventimg(href="/viewEvent/#{e._id}")
+							img.eventimg.img-responsive(src='#{e.image}')
+							a.eventimg.caption #{e.title}
+					.col-lg-8.col-md-8.col-sm-8.col-xs-12.eventheader
+						h1 #{e.title} on #{e.date}
+						h4 #{e.startTime} to #{e.endTime}
+						h4 This event currently has 
+							strong #{e.volunteerIDs.length} volunteer(s) 
+							| and needs 
+							strong.redder #{e.volunteerQuota} more
+						a.ghost-btn-red(href='/becomeVolunteer/#{e._id}') Be a Volunteer
+
+
+		.container.eventheader
 			.row
-				.col-lg-4
-					a.eventimg(href="/viewEvent/#{e._id}")
-						img.eventimg.img-responsive.floatleft.no-padding(src='#{e.image}')
-						a.eventimg.caption(href="/viewEvent/#{e._id}") #{e.title}
-
-			h1 #{e.title}
-			p Time: #{e.startTime} to #{e.endTime}
-			a(href='/becomeVolunteer/#{e._id}') Apply to Volunteer
-
-			h4#volunteers This event currently has #{e.volunteerIDs.length} volunteer(s) and needs #{e.volunteerQuota} more
-			for vol in e.volunteerIDs
-				li #{vol.name}
+				.col-lg-8.col-md-8.col-sm-8.col-xs-12
+					h2#huge EVENT LOCATION
+					p.white #{e.location} (#{e.locationAddress})
+					h2#huge VOLUNTEER DETAILS
+					p.white What you get: #{e.volunteerPerks}
+					p.white Please arrive to set up at #{e.volunteerTime}!
+				.col-lg-4.col-md-4.col-sm-4.col-xs-12
+					h2 VOLUNTEERS
+					for vol in e.volunteerIDs
+						.row.padding-bottom
+							.col-lg-4.col-md-4.col-sm-4.col-xs-4
+								img.img-responsive.img-circle.profile(src='/images/jenn.jpg')
+							.col-lg-8.col-md-8.col-sm-8.col-xs-8
+								p
+									strong #{vol.name} <br />
+									| #{vol.location}

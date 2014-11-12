@@ -16,16 +16,15 @@ TO DO TODAY:
 
 Design
 * Layout (nav bar)
-~~~ * Homepage 
-~~~ * Event Page
+X * Homepage 
+X * Event Page
+   * Add spacing to volunteer list
 X Volunteer Dashboard
 X Event Manager Dashboard
 X Login Screen
 
-* IMG URL in form for events
-* Add imgs to event seeds
-~~~~ * Volunteer Count for each event (list of your accepted volunteer names, photos, contact info, etc.)
-         ~ Database stuff.. when a volunteer signs up, decrease the volunteercount by 1.
+X Volunteer Count for each event (list of your accepted volunteer names, photos, contact info, etc.)
+    X Database stuff.. when a volunteer signs up, decrease the volunteercount by 1.
 
 
 

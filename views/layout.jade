@@ -5,30 +5,23 @@ html(lang='en')
 		title Backstage Pass
 		link(rel="stylesheet", href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/css/bootstrap.min.css")
 		link(href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet")
-		link(href='http://fonts.googleapis.com/css?family=Raleway:400,900,800' rel='stylesheet' type='text/css')
+		link(href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700|Raleway:400,700,500,600,800' rel='stylesheet' type='text/css')
 		link(rel="stylesheet", href="/scripts/main.css")
 
 	body
-		//- .container
-		//- 	nav.navbar
-		//- 			.navbar-header
-		//- 				a.navbar-brand(href='/')
-		//- 					img(alt='Backstage Pass Logo' href='/')
-		//- 			ul.nav.navbar-nav
-		//- 				li WHAT UP
-
-
 		.navbar.opaque
 			.navbar-header
-				a.brand(href='#')
+				a.brand(href='/')
 					img(src='http://placehold.it/150x50&text=Logo')
 				a.btn.btn-navbar(data-toggle='collapse' data-target='.nav-collapse')
 			.nav-collapse
 				ul.nav.navbar-nav
 					li
-						a.white(href='/auth/login') My Dashboard
+						a.white(href='/auth/login') Log In
 					li
-						a.white(href='#') Events
+						a.white(href='/') Browse Events
+					li
+						a.white(href='/user/*') My Dashboard
 							
 		
 		block content

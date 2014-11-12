@@ -118,15 +118,19 @@ block content
 								.form-group
 									label.control-label
 										| Start Time:
-									input.form-control(type="time" name='startTime' placeholder='Start time')
+									input.form-control(type="text" name='startTime' placeholder='Start time')
 								.form-group
 									label.control-label
 										| End Time:
-									input.form-control(type="time" name='endTime' placeholder='End time')
+									input.form-control(type="text" name='endTime' placeholder='End time')
 								.form-group
 									label.control-label
 										| Event Website:
 									input.form-control(type="text" name='url' placeholder='http://www.myevent.com/')
+								.form-group
+									label.control-label
+										| Link to Event Image:
+									input.form-control(type="text" name='image' placeholder='Link to event image')
 								.form-group
 									label.control-label
 										| Venue Name:
@@ -147,12 +151,12 @@ block content
 								.form-group
 									label.control-label
 										| What time do you need volunteers to arrive at this event?
-									input.form-control(type="time" name='volunteerTime' placeholder='Start time for volunteers')
+									input.form-control(type="text" name='volunteerTime' placeholder='Start time for volunteers')
 								.form-group
 									label.control-label
 										| What perks are you offering your volunteers?
 									textarea.form-control(type="text" name='volunteerPerks' placeholder='e.g. Free admission, free t-shirt, buddy passes, etc.')
-								input.btn.btn-medium.btn-success(type="submit")
+								input.btn.ghost-btn(type="submit")
 					//- LOG OUT
 					.bhoechie-tab-content
 						center

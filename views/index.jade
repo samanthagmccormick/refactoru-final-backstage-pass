@@ -3,11 +3,10 @@ extends layout
 block content
 	.container
 		//- Link to login screen
-		h3 Upcoming Events
+		h1 These events are looking for volunteers!
 
-		.row
-			for e in events
-				.div.col-lg-4.col-md-4.col-sm-6.col-xs-6.no-padding
-					a.eventimg(href="/viewEvent/#{e._id}")
-						img.eventimg.img-responsive.floatleft.no-padding(src='#{e.image}')
-						a.eventimg.caption(href="/viewEvent/#{e._id}") #{e.title}
+		for e in events
+			.div.col-lg-4.col-md-4.col-sm-6.col-xs-6.no-padding
+				a.eventimg(href="/viewEvent/#{e._id}")
+					img.eventimg.img-responsive.floatleft.no-padding(src='#{e.image}')
+					a.eventimg.caption(href="/viewEvent/#{e._id}") #{e.title}

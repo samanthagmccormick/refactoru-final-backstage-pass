@@ -18,10 +18,6 @@ var eventSchema = mongoose.Schema({
 		type: Number,
 		default: 0
 	},
-	volunteerCount: {
-		type: Number,
-		default: 0
-	},
 	volunteerTime: String,
 	volunteerpm: Boolean,
 	volunteerIDs: [ObjectId],

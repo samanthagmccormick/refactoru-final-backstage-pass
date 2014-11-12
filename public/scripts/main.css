@@ -14,8 +14,15 @@ body {
 /*  background: #958976;
 */
   background-image: url("/images/greytexture.png");
-  background-repeat: repeat-y repeat-x;
+  font-family: 'Raleway', Arial, Helvetica, sans-serif;
+/*  font-family: 'Josefin Sans', sans-serif;
+*/  font-size: 14px;
+/*  background-repeat: repeat-y repeat-x;
+*/
+}
 
+h1, h2, h3 {
+  font-weight: 600;
 }
 
 a {
@@ -32,7 +39,11 @@ a:hover {
   font-weight: 100;
 }
 
-.img-container {
+#large {
+  font-size: 4em;
+}
+
+/*.img-container {
 	position: fixed;
 	height: 300px;
 	width: 380px;
@@ -45,32 +56,22 @@ a:hover {
 .img-container p {
 	position: absolute;
 	display: inline;
-}
-
-.profile {
-  border: 3px solid rgba(97,20,39,.6);
-}
-
-.yellow {
-  color: #EFB94B;
-}
-
-.red {
-  color: #611427;
-}
-
-.white {
-  color: #ffffff;
-}
+}*/
 
 /* NAV */
 
 .opaque {
-  background-color: rgba(0,0,0,.4);
-  padding: 20px 20px;
+  padding: 30px 20px;
+}
+  
+  /* Bootstrap mod */
+.navbar {
+  border: 0px;
+  border-radius: 0px;
+  margin-bottom: 0px;
 }
 
-/* For homepage photo captions */
+/* Homepage (Browse Events) */
 
 .caption {
   background-color: rgba(0,0,0,.9);
@@ -92,6 +93,7 @@ a:hover {
 
 .eventimg {
   opacity: 1;
+  padding-top: 30px;
   filter: alpha(opacity=100);
 }
 
@@ -108,8 +110,38 @@ a:hover {
 
 .bg {
   margin-top: -30px;
-  background-image: url(/images/crowd.jpg);
-  background-size: 1800px 1130px;
+  height: 100%;
+  background: url('/images/crowd.jpg') no-repeat 100% 0% fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+}
+
+.eventheader h1 {
+  margin-top: 70px;
+}
+
+.eventheader {
+  color: #611427;
+}
+
+.eventheader h2, h3, h4 {
+  font-weight: 500;
+
+}
+
+.container-fluid-stretch {
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Profile Page */
+
+.profile {
+  border: 3px solid rgba(97,20,39,.6);
 }
 
 /* Helper Classes */
@@ -120,6 +152,13 @@ a:hover {
   padding-right:0 !important;
 }
 
+.no-margin {
+  margin:0px;
+}
+
+.padding-bottom {
+  padding-bottom: 20px;
+}
 .floatleft {
   float:left;
 }
@@ -131,6 +170,26 @@ a:hover {
 .center {
   margin: 0 auto;
   text-align: center;
+}
+
+.yellow {
+  color: #EFB94B;
+}
+
+.red {
+  color: #611427;
+}
+
+.white {
+  color: #ffffff;
+}
+
+.redder {
+  color: #D80000;
+}
+
+h2#huge {
+  font-size: 3.5em;
 }
 
 /* For horizontal lists */
@@ -176,7 +235,9 @@ a:hover {
     zoom: 1;
     -webkit-backface-visibility: hidden;
     position: relative;
+    text-align: center;
 }
+
 /* Menu buttons hover */
  .ghost-btn:hover {
     -webkit-transition: 0.2s ease;
@@ -184,7 +245,52 @@ a:hover {
     -o-transition: 0.2s ease;
     transition: 0.2s ease;
     background-color: #ffffff;
+    text-decoration: none;
     color: #000000;
+}
+
+/* menu buttons */
+ .ghost-btn-red {
+    display: inline-block;
+    text-decoration: none;
+    border: 2px solid #611427;
+    height: 36px;
+    width: 150px;
+    line-height: 36px;
+    color: #611427;
+    -webkit-border-radius: 5px;
+    -webkit-background-clip: padding-box;
+    -moz-border-radius: 5px;
+    -moz-background-clip: padding;
+    border-radius: 5px;
+    background-clip: padding-box;
+    font-size: 18px;
+    padding: .5em 1.5em;
+    margin: 20px 0px;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    background: none;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    cursor: pointer;
+    zoom: 1;
+    -webkit-backface-visibility: hidden;
+    position: relative;
+    text-align: center;
+}
+
+/* Menu buttons hover */
+ .ghost-btn-red:hover {
+    -webkit-transition: 0.2s ease;
+    -moz-transition: 0.2s ease;
+    -o-transition: 0.2s ease;
+    transition: 0.2s ease;
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #611427;
 }
 
 
@@ -417,8 +523,9 @@ a:hover {
   margin-bottom: 0;
   border: none;
   background-color: rgba(97,20,39,.6);
-/*  background-image: rgba(97,20,39,.4);
-*/}
+    color: #1D2326;
+
+}
 .bhoechie-tab-menu .list-group>a .glyphicon,
 .bhoechie-tab-menu .list-group>a .fa,
 .bhoechie-tab-menu .list-group>a
@@ -440,7 +547,6 @@ a:hover {
 .bhoechie-tab-menu .list-group>a.active .fa{
   border: none;
   background-color: #611427;
-  background-image: #611427;
   color: #ffffff;
 }
 .bhoechie-tab-menu .list-group>a.active:after{
@@ -513,6 +619,9 @@ a:hover {
     line-height: 1;
   }
   .event-list > li > img {
+    height: 120px;
+    width: 150px;
+    overflow: hidden;
     width: 100%;
   }
   .event-list > li > .info {

@@ -15,6 +15,10 @@ var indexController = {
 
 	},
 	renderUser: function(req, res) {
+	if (!req.user) {
+			console.log('sorry, youre not logged in!');
+			res.redirect('/auth/login');
+		} else {
 	// Render the new user's dashboard
 		Event.find({owner: req.user._id}).populate('volunteerIDs', null, 'user').exec(function(err, myEvents) {
 			// console.log('All events: ', myEvents);
@@ -40,6 +44,7 @@ var indexController = {
 
 
 		});
+	}
 	},
 	addNewEvent: function(req, res) {
 	// Add a new event and immediately show the new event on the user's dashboard
@@ -83,10 +88,10 @@ var indexController = {
 		});
 	},
 	becomeVolunteer: function(req, res) {
-		// if (!req.user) {
-		// 	console.log('sorry, youre not logged in!');
-		// 	res.redirect('/auth/login');
-		// } else {
+		if (!req.user) {
+			console.log('sorry, youre not logged in!');
+			res.redirect('/auth/login');
+		} else {
 
 		console.log('Current logged in user: ', req.user.name, 'current user ID: ', req.user._id);
 		console.log('Current event: ', req.params._id);
@@ -103,13 +108,17 @@ var indexController = {
 			});
 
 			// Update the event to include this new volunteer!
-			Event.update({_id: req.params._id}, {$push: {volunteerIDs: req.user._id}}, function(err, result){
+			Event.update({_id: req.params._id}, {$push: {volunteerIDs: req.user._id}, $inc: {volunteerQuota: -1}}, function(err, result){
 				// Refresh their dashboard with this new info (see jade file)
 				console.log('updated event: ', result);
 				res.redirect('/user/' + req.user.username);
 			});
 
 		}
+	},
+	viewUser: function(req, res) {
+
+	}
 };
 
 module.exports = indexController;
