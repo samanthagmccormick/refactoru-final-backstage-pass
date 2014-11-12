@@ -30,7 +30,7 @@ var passportConfig = require('./config/passport');
 require('./models/seeds/eventSeeds.js');
 
 // Connect to Mongoose database
-mongoose.connect('mongodb://localhost/test10');
+mongoose.connect(process.env.MONGOHQ_URL || "mongodb://localhost/test10");
 
 var app = express();
 app.set('view engine', 'jade');
