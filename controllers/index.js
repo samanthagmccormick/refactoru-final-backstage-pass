@@ -115,9 +115,6 @@ var indexController = {
 			});
 
 		}
-	},
-	viewUser: function(req, res) {
-
 	}
 };
 

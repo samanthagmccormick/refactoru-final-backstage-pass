@@ -1,8 +1,3 @@
-/* Table Filter */
-
-
-
-
 // CLIENT-SIDE - This is where jQuery goes!
 
 console.log('hello!!!');

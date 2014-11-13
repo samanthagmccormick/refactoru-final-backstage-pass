@@ -72,20 +72,11 @@ app.get('/auth/logout', authenticationController.logout);
 
 app.get('/', indexController.index);
 
-// app.post('/addUser', indexController.addUser);
-
 app.post('/addNewEvent', indexController.addNewEvent);
 app.get('/viewEvent/:id', indexController.renderEvent);
 
 app.get('/becomeVolunteer/:_id', indexController.becomeVolunteer);
 app.get('/user/:_username', indexController.renderUser);
-
-// app.post('/addVolunteer', indexController.addVolunteer);
-// app.post('/addEventManager', indexController.addEventManager);
-
-// app.get('/volunteer/:id', indexController.renderVolunteer);
-// app.get('/eventManager/:id', indexController.renderEventManager);
-
 
 
 // ***** IMPORTANT ***** //
