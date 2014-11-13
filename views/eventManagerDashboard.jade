@@ -116,35 +116,35 @@ block content
 								.form-group
 									label.control-label
 										| Event Title:
-									input.form-control(type="text" name='title' placeholder='Event title')
+									input.form-control(type="text" value='Festivus' name='title' placeholder='Event title')
 								.form-group
 									label.control-label
 										| Event Date:
-									input.form-control(type="date" name='date' placeholder='Date')
+									input.form-control(type="text" value='12/23/14' name='date' placeholder='Date')
 								.form-group
 									label.control-label
 										| Start Time:
-									input.form-control(type="text" name='startTime' placeholder='Start time')
+									input.form-control(type="text" value='12:00PM' name='startTime' placeholder='Start time')
 								.form-group
 									label.control-label
 										| End Time:
-									input.form-control(type="text" name='endTime' placeholder='End time')
+									input.form-control(type="text" value='4:00PM' name='endTime' placeholder='End time')
 								.form-group
 									label.control-label
 										| Event Website:
-									input.form-control(type="text" name='url' placeholder='http://www.myevent.com/')
+									input.form-control(type="text" value='http://festivusweb.com/' name='url' placeholder='http://www.myevent.com/')
 								.form-group
 									label.control-label
 										| Link to Event Image:
-									input.form-control(type="text" name='image' placeholder='Link to event image')
+									input.form-control(type="text" value='https://www.unitedwaynashua.org/wp-content/uploads/2012/12/Festivus-Logo.jpg' name='image' placeholder='Link to event image')
 								.form-group
 									label.control-label
 										| Venue Name:
-									input.form-control(type="text" name='location' placeholder='Venue Name')
+									input.form-control(type="text" value='Jerry\'s House' name='location' placeholder='Venue Name')
 								.form-group
 									label.control-label
 										| Venue Address:
-									input.form-control(type="text" name='locationAddress' placeholder='Location of the event')
+									input.form-control(type="text" value='2020 E. 81st Street, New York, NY' name='locationAddress' placeholder='Location of the event')
 								.form-group
 									label.control-label
 										| How many volunteers will you need?
@@ -157,15 +157,15 @@ block content
 								.form-group
 									label.control-label
 										| What time do you need volunteers to arrive at this event?
-									input.form-control(type="text" name='volunteerTime' placeholder='Start time for volunteers')
+									input.form-control(type="text" value='10:00AM' name='volunteerTime' placeholder='Start time for volunteers')
 								.form-group
 									label.control-label
 										| What perks are you offering your volunteers?
-									textarea.form-control(type="text" name='volunteerPerks' placeholder='e.g. Free admission, free t-shirt, buddy passes, etc.')
+									input.form-control(type="textarea" value='Free airing of grievances, and a cigar' name='volunteerPerks')
 								.form-group
 									label.control-label
 										| Anything else you need volunteers to know?
-									textarea.form-control(type="text" name='otherInfo' placeholder='e.g. Must be able to attend pre-event meeting, etc.')
+									input.form-control(type="textarea" name='otherInfo' value='FESTIVUS... FOR THE REST OF US!')
 								input.btn.ghost-btn(type="submit")
 					//- LOG OUT
 					.bhoechie-tab-content
