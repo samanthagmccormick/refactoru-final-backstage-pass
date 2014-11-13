@@ -15,7 +15,7 @@ body {
 /*  background: #958976;
 */
   background-image: url("/images/shattered.png");
-  background-color: #404040;
+  background-color: #686969;
   font-family: 'Raleway', Arial, Helvetica, sans-serif;
 /*  font-family: 'Josefin Sans', sans-serif;
 */  font-size: 14px;
@@ -212,8 +212,8 @@ a:hover {
   color: #ffffff;
 }
 
-.redder {
-  color: #D80000;
+.green {
+  color: #32CD32;
 }
 
 .redbg {
